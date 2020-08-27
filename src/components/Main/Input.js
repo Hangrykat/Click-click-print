@@ -1,0 +1,37 @@
+import React from 'react'
+import './Input.css'
+
+function Input() {
+    return (
+        <div className='input-container'>
+            <div className='main-bg-wrapper'>
+                <div className='secondary-bg-wrapper'>
+                    <div className='title-big'>(1) Enter label information</div>
+                    <div className='input-panel-wrapper'>
+                        <div className='input-panel'>
+                            <div className='title-mid'>About Product</div>
+                            <div className='input-field'>
+                                <div className='single-line-input'><p>Product name:</p><input type="text"></input></div>
+                                <div className='single-line-input'><p>Chemical formula:</p><input type="text"></input></div>
+                                <div className='single-line-input'><p>Date:</p><input type="number"></input></div>
+                                <div className='single-line-input'><p>Possible expiry date:</p><input type="number"></input></div>
+                                <div className='single-line-input'><p>Description:</p><textarea placeholder="e.g. molarity"></textarea></div>
+                                <div className='single-line-input'><p>Name of owner:</p><input type="text"></input></div>
+                                <div className='single-line-input'><p>Contact info</p><input type="text"></input></div>
+                            </div>
+                        </div>
+                        <div className='input-panel'>
+                            <div className='title-mid'>Hazardous symbols</div>
+                            <div className='input-field'>
+                                <div className='single-line-input'><p>Choose the symbols:</p></div>
+                                <div className="symbols-wrapper"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Input

@@ -1,0 +1,10 @@
+/* 
+.main-bg-wrapper--> Input.css
+.secondary-bg-wrapper --> Input.css
+*/
+
+.preview-container {
+    display: flex;
+    justify-content: center;
+}
+
