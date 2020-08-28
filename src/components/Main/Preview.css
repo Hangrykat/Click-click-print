@@ -8,3 +8,8 @@
     justify-content: center;
 }
 
+.preview-panel {
+    height: 200px;
+    background: #505050;
+    margin: 10px;
+}

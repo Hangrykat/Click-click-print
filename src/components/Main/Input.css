@@ -62,6 +62,7 @@
 .single-line-input input {
     height: 20px;
     width: 60%;
+    font-size: 0.6rem;
 }
 
 .single-line-input textarea {

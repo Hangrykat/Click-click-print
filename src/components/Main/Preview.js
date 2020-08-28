@@ -6,7 +6,13 @@ function Preview() {
         <div className='preview-container'>
             <div className='main-bg-wrapper'>
                 <div className='secondary-bg-wrapper'>
-                    Preview
+                    <div className='title-big'>(2) Preview & manage file</div>
+                    <div className="preview-panel"></div>
+                    <div className="buttons-wrapper">
+                        <button>Save</button>
+                        <button>Print</button>
+                        <button>Share</button>
+                    </div>
                 </div>
             </div>
         </div>
