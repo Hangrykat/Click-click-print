@@ -1,4 +1,10 @@
 import React from 'react'
+import CustomButton from './CustomButton'
+import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
+import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
+
+import TextInput from './TextInput';
+
 import './Input.css'
 
 function Input() {
@@ -18,15 +24,22 @@ function Input() {
                                 <div className='single-line-input'><p>Description:</p><textarea placeholder="e.g. molarity"></textarea></div>
                                 <div className='single-line-input'><p>Name of owner:</p><input type="text"></input></div>
                                 <div className='single-line-input'><p>Contact info</p><input type="text"></input></div>
+                                <TextInput variant='outlined' label='Product name' />
+                                <TextInput variant='outlined' label='Date' type='number' />
+                                
                             </div>
                         </div>
                         <div className='input-panel'>
                             <div className='title-mid'>Hazardous symbols</div>
                             <div className='input-field'>
-                                <div className='single-line-input'><p>Choose the symbols:</p></div>
+                                <div className='single-line-input'><p>Choose symbols:</p></div>
                                 <div className="symbols-wrapper"></div>
                             </div>
                         </div>
+                    </div>
+                    <div className='buttons-wrapper'>
+                        <CustomButton icon={<AddCircleOutlineOutlinedIcon/>} name='Create' />
+                        <CustomButton icon={<EditOutlinedIcon/>} name='Edit' />
                     </div>
                 </div>
             </div>

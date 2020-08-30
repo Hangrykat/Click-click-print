@@ -1,3 +1,5 @@
+/* buttons -->Preview.css */
+
 .input-container {
     display: flex;
     justify-content: center;
@@ -10,6 +12,7 @@
     width: 60%;
     padding: 20px;
     margin: 20px;
+    border-radius: 5px;
 }
 
 .secondary-bg-wrapper {
@@ -77,3 +80,4 @@
     background: #505050;
     height: 200px;
 }
+

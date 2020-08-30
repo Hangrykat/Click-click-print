@@ -13,3 +13,15 @@
     background: #505050;
     margin: 10px;
 }
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+}
+
+.button {
+    padding: 5px 10px 5px 10px;
+    margin: 10px;
+    border-radius: 4px;
+}

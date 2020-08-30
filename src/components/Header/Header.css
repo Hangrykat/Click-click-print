@@ -2,3 +2,16 @@
     display: flex;
     justify-content: center;
 }
+
+.logo-wrapper {
+    width:150px;
+    height:100px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-wrapper img{
+    width:150px;
+    height:150px;
+    display: flex;
+}
