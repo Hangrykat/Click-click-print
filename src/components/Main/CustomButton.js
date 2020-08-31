@@ -7,7 +7,7 @@ function CustomButton(props) {
         background: '#488b8f',
         borderRadius: 3,
         border: 0,
-        fontSize: '10px',
+        fontSize: 'o.8vw',
         color: '#fff',
         fontWeight: 'bold',
         margin: '5px',
@@ -16,7 +16,7 @@ function CustomButton(props) {
 
     return (
         <div>
-            <Button endIcon={props.icon} style={styledButton}>{props.name}</Button>
+            <Button type={props.type} form={props.form} endIcon={props.icon} style={styledButton}>{props.name}</Button>
         </div>
     )
 }

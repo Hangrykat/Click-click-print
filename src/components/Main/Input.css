@@ -34,7 +34,7 @@
 
 .title-big {
     padding: 10px;
-    font-size: 0.8rem;
+    font-size: 1.2vw;
     font-weight: bold;
 }
 
@@ -42,11 +42,11 @@
     background: #202020;
     color: #fff;
     padding: 10px;
-    font-size: 0.7rem;
+    font-size: 1vw;
     font-weight: bold;
 }
 
-.input-field {
+.input-field-wrapper {
     display: block;
     padding: 10px;
 
@@ -57,24 +57,6 @@
     align-items: center;
 }
 
-.single-line-input p {
-    width: 35%;
-    font-size: 0.65rem;
-}
-
-.single-line-input input {
-    height: 20px;
-    width: 60%;
-    font-size: 0.6rem;
-}
-
-.single-line-input textarea {
-    width: 35%;
-    font-size: 0.7rem;
-    resize: vertical;
-    min-height: 20px;
-    min-width: 60%;
-}
 
 .symbols-wrapper {
     background: #505050;
