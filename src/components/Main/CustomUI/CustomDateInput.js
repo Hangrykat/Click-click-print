@@ -7,17 +7,13 @@ function CustomDateInput(props) {
     borderRadius: 3,
     border: 0,
     fontSize: "0.5vw",
-    margin: "5px",
+    margin: "10px 0",
     padding: 0,
-    width: "95%",
+    width: "100%",
     display: "flex",
     justifyContent: "center",
     alignItem: "center",
   };
-
-  //const today = new Date();
-
-  //const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
   // type={props.type}
   const handleInputType = (inp) => {

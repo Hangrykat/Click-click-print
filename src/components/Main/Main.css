@@ -1,3 +1,9 @@
 .main-container {
     align-items: center;
 }
+
+.main-page-view {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

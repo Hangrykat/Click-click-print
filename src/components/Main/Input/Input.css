@@ -1,15 +1,22 @@
 /* buttons -->Preview.css */
 
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .input-container {
     display: flex;
     justify-content: center;
+    width: 40%;
 }
 
 .main-bg-wrapper {
     display: flex;
     justify-content: center;
     background: #add2c9;
-    width: 60%;
+    width: 100%;
     padding: 20px;
     margin: 20px;
     border-radius: 5px;
@@ -22,19 +29,18 @@
 }
 
 .input-panel-wrapper {
-    display: flex;
+    display: block;
 }
 
 .input-panel {
-    width: 48%;
+    width: 97%;
     margin:10px;
     background: #faf9f9;
-    border: 1px solid #202020
 }
 
 .title-big {
     padding: 10px;
-    font-size: 1.2vw;
+    font-size: 1.1vw;
     font-weight: bold;
 }
 
@@ -42,7 +48,7 @@
     background: #202020;
     color: #fff;
     padding: 10px;
-    font-size: 1vw;
+    font-size: 0.9vw;
     font-weight: bold;
 }
 
@@ -58,8 +64,7 @@
 }
 
 
-.symbols-wrapper {
-    background: #505050;
-    height: 200px;
+.label-text {
+    font-size: 0.9vw;;
+    padding: 5px;
 }
-
