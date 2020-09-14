@@ -22,10 +22,10 @@ function LabelPreview() {
         userName,
         contactInfo } = useContext(StateContext);
     return (
-        <div className='preview-container'>
+        <div className='panel-container'>
             <div className='main-bg-wrapper'>
                 <div className='secondary-bg-wrapper'>
-                    <div className="title-big">(2) Preview & manage file</div>
+                    <div className="title-big">Step 2: Check the preview</div>
                     <div className="preview-panel">
                         <div className='label-wrapper'>
                             <div className='label'>
@@ -43,7 +43,7 @@ function LabelPreview() {
                                     </div>
                                 </div>
                                 <div className='label-sheet'>
-                                    <h1>Hazardous Symbols</h1>
+                                    <div className='title-label'>Hazardous Symbols</div>
                                     <div className='symbols-wrapper'>
                                         <div className='symbol'>
                                             <img src={logoExplosive} />
@@ -62,11 +62,17 @@ function LabelPreview() {
                             </div>
                         </div>    
                     </div>
+                    <div className="title-big">Step 3: Manage label and file</div>
+                        <div className="collection-wrapper flex-center">
+                            <div className="small-label title-label">Label 1</div>
+                            <div className="small-label title-label">Label 2</div>
+                            <div className="small-label title-label">Label 3</div>
+                        </div>
                     <div className="buttons-wrapper">    
                         <CustomButton icon={<SaveOutlinedIcon/>} name='Save' />
                         <CustomButton icon={<PrintOutlinedIcon/>} name='Print' />
                         <CustomButton icon={<ShareOutlinedIcon/>}name='Share' />
-                    </div>
+                    </div>                                        
                 </div>
             </div>
         </div>

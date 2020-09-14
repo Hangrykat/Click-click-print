@@ -25,7 +25,6 @@ const ContextProvider = ({ children }) => {
           setExpiryDate,
           description,
           setDescription,
-          productName,
           userName,
           setUserName,
           contactInfo,

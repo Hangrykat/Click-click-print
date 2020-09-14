@@ -6,10 +6,20 @@
     align-items: center;
 }
 
-.input-container {
+.flex-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.panel-container {
     display: flex;
     justify-content: center;
     width: 40%;
+    margin: 10px
 }
 
 .main-bg-wrapper {

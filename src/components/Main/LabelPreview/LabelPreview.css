@@ -3,15 +3,9 @@
 .secondary-bg-wrapper --> Input.css
 */
 
-.preview-container {
-    display: flex;
-    justify-content: center;
-    width: 40%;
-}
-
 .preview-panel {
-    height: 85%;
-    background: #505050;
+    height: 58%;
+    background: #909090;
     margin: 10px;
     display: flex;
     justify-content:center;
@@ -33,7 +27,7 @@
 .label-wrapper{
     background-color: #fff;
     width: 90%;
-    height: 50%;
+    height: 70%;
     border-radius: 5px;
 }
 
@@ -87,5 +81,26 @@
 .description-container {
     border: 1px solid black;
     width: 90%;
+    margin: 10px;
 }
 
+.title-label {
+    font-size: 1.2vw;
+    font-weight: bold;
+    margin: 10px;
+    text-align: center;
+}
+
+.collection-wrapper {
+    width: 96%;
+    height: 17%;
+    margin: 10px;
+    background-color: #909090;
+}
+
+.small-label {
+    width: 30%;
+    height: 60%;
+    background-color: #fff;
+    margin: 5px;
+}

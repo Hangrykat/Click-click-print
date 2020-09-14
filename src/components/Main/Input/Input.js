@@ -29,14 +29,14 @@ function Input() {
     setContactInfo(e.target.contactInfo.value);
   }
   return (
-    <div className="input-container">
+    <div className="panel-container">
       <div className="main-bg-wrapper">
         <form
           id="label-info"
           className="secondary-bg-wrapper"
           onSubmit={handleLabelInfo}
         >
-          <div className="title-big">(1) Enter label information</div>
+          <div className="title-big">Step 1: Enter label information</div>
           <div className="input-panel-wrapper">
             <div className="input-panel">
               <div className="title-mid">About Product</div>
@@ -49,10 +49,16 @@ function Input() {
                   line="multiline"
                   rows="3"
                 />
-                <CustomTextInput name="owner" label="Name of owner" />
-                <CustomTextInput name="contactInfo" label="Contact info" />          
-                <CustomDateInput name="date" label="Date" />
-                <CustomDateInput name="eDate" label="Possible expiry date" />
+                <CustomTextInput name="owner" label="Name/ID number" />
+                <CustomTextInput name="contactInfo" label="Contact info" />
+                <div className='flex-wrapper'>
+                  <div className='flex-grow'>         
+                    <CustomDateInput name="date" label="Date" />
+                  </div>
+                  <div className='flex-grow'> 
+                    <CustomDateInput name="eDate" label="Possible expiry date" />
+                  </div>
+                </div> 
 
               </div>
             </div>
