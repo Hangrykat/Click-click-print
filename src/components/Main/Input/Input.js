@@ -6,7 +6,7 @@ import CustomButton from "../CustomUI/CustomButton";
 import CustomDateInput from "../CustomUI/CustomDateInput";
 import CustomTextInput from "../CustomUI/CustomTextInput";
 
-import { StateContext } from "../../../context"
+import { StateContext } from "../../../context";
 
 import "./Input.css";
 function Input() {
@@ -17,7 +17,10 @@ function Input() {
     setExpiryDate,
     setDescription,
     setUserName,
-    setContactInfo } = useContext(StateContext);
+    setContactInfo,
+    setHazardousSymbols,
+    hazardousSymbols,
+  } = useContext(StateContext);
   function handleLabelInfo(e) {
     e.preventDefault();
     setProductName(e.target.product.value);
@@ -28,6 +31,16 @@ function Input() {
     setUserName(e.target.owner.value);
     setContactInfo(e.target.contactInfo.value);
   }
+  function handleSymbols(symbol) {
+    if (hazardousSymbols.includes(symbol)) {
+      setHazardousSymbols(
+        hazardousSymbols.filter((symbols) => symbols != symbol)
+      );
+    } else {
+      setHazardousSymbols([...hazardousSymbols, symbol]);
+    }
+  }
+
   return (
     <div className="panel-container">
       <div className="main-bg-wrapper">
@@ -51,15 +64,17 @@ function Input() {
                 />
                 <CustomTextInput name="owner" label="Name/ID number" />
                 <CustomTextInput name="contactInfo" label="Contact info" />
-                <div className='flex-wrapper'>
-                  <div className='flex-grow'>         
+                <div className="flex-wrapper">
+                  <div className="flex-grow">
                     <CustomDateInput name="date" label="Date" />
                   </div>
-                  <div className='flex-grow'> 
-                    <CustomDateInput name="eDate" label="Possible expiry date" />
+                  <div className="flex-grow">
+                    <CustomDateInput
+                      name="eDate"
+                      label="Possible expiry date"
+                    />
                   </div>
-                </div> 
-
+                </div>
               </div>
             </div>
             <div className="input-panel">
@@ -68,34 +83,79 @@ function Input() {
                 <div className="single-line-input">
                   <p>Choose symbols:</p>
                 </div>
-                <div className="symbols-wrapper">
-                  <div className='symbol'>
-                    <a><img src="" alt="explosive" /></a>
+                <div className="choose-symbols-wrapper">
+                  <div className="chooseSymbol">
+                    <img
+                      className="previewSymbols"
+                      src={require("../../../assets/symbols/explosive.jpg")}
+                      alt="explosive"
+                      onClick={() => handleSymbols("explosive")}
+                    />
                   </div>
-                  <div className='symbol'>
-                    <a><img src="" alt="corrosive"/></a>
+                  <div className="chooseSymbol">
+                    <img
+                      className="previewSymbols"
+                      src={require("../../../assets/symbols/corrosive.jpg")}
+                      alt="corrosive"
+                      onClick={() => handleSymbols("corrosive")}
+                    />
                   </div>
-                  <div className='symbol'>
-                    <a><img src="" alt="flammable"/></a>
+                  <div className="chooseSymbol">
+                    <img
+                      className="previewSymbols"
+                      src={require("../../../assets/symbols/flammable.jpg")}
+                      alt="flammable"
+                      onClick={() => handleSymbols("flammable")}
+                    />
                   </div>
-                  <div className='symbol'>
-                    <a><img src="" alt="environment danger"/></a>
+                  <div className="chooseSymbol">
+                    <img
+                      className="previewSymbols"
+                      src={require("../../../assets/symbols/environmentdanger.jpg")}
+                      alt="environment danger"
+                      onClick={() => handleSymbols("environmentdanger")}
+                    />
                   </div>
-                  <div className='symbol'>
-                    <a><img src="" alt="toxic"/></a>
+                  <div className="chooseSymbol">
+                    <img
+                      className="previewSymbols"
+                      src={require("../../../assets/symbols/toxic.jpg")}
+                      alt="toxic"
+                      onClick={() => handleSymbols("toxic")}
+                    />
                   </div>
-                  <div className='symbol'>
-                    <a><img src="" alt="oxidation"/></a>
+                  <div className="chooseSymbol">
+                    <img
+                      className="previewSymbols"
+                      src={require("../../../assets/symbols/oxidationdanger.jpg")}
+                      alt="oxidation"
+                      onClick={() => handleSymbols("oxidationdanger")}
+                    />
                   </div>
-                  <div className='symbol'>
-                    <a><img src="" alt="health Hazard"/></a>
+                  <div className="chooseSymbol">
+                    <img
+                      className="previewSymbols"
+                      src={require("../../../assets/symbols/healthhazard.jpg")}
+                      alt="health Hazard"
+                      onClick={() => handleSymbols("healthhazard")}
+                    />
                   </div>
-                  <div className='symbol'>
-                    <a><img src="" alt="warning"/></a>
+                  <div className="chooseSymbol">
+                    <img
+                      className="previewSymbols"
+                      src={require("../../../assets/symbols/warning.jpg")}
+                      alt="warning"
+                      onClick={() => handleSymbols("warning")}
+                    />
                   </div>
-                    <div className='symbol'>
-                  <a><img src="" alt="compressed gas"/></a>
-                  </div>                  
+                  <div className="chooseSymbol">
+                    <img
+                      className="previewSymbols"
+                      src={require("../../../assets/symbols/compressedgas.jpg")}
+                      alt="compressed gas"
+                      onClick={() => handleSymbols("compressedgas")}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
