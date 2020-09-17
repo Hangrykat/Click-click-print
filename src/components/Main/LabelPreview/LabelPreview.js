@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import './LabelPreview.css'
-import "../../../shared-style.css"
+import "../../../shared-styles.css"
 
 import SaveOutlinedIcon from '@material-ui/icons/SaveOutlined';
 import PrintOutlinedIcon from '@material-ui/icons/PrintOutlined';

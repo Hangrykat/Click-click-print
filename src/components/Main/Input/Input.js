@@ -9,7 +9,7 @@ import CustomTextInput from "../CustomUI/CustomTextInput";
 import { StateContext } from "../../../context"
 
 import "./Input.css";
-import "../../../shared-style.css"
+import "../../../shared-styles.css"
 
 function Input() {
   const {

@@ -1,20 +1,16 @@
-import React, { useContext }  from 'react';
-import './App.css';
+import React  from 'react';
+import './shared-styles.css';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main'
-import {StateContext} from "./context"
+import PrintPreview from './components/Main/PrintPreview/PrintPreview';
+
 
 function App() {
-  const { setShowModal, showModal } = useContext(StateContext);
+
   return (
-    <div className="App">{ showModal ? (<div id="modal-wrap" className="visible"></div>) :(<div id="modal-wrap" ></div>)}
-      <div className="modal-window">
-        <button onClick={ () => setShowModal(false)}>Back</button>
-        <div className="modal-content">
-          <h1>Print Preview</h1>
-        </div>
-      </div>
+    <div className="App">    
       {/*<Header />*/}
+      <PrintPreview />
       <Main />
     </div>
   );
