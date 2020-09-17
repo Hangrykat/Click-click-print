@@ -17,25 +17,19 @@ function CustomTextInput(props) {
   let button = (
     <TextField
       size="small"
-      name={props.name}
-      type={props.type}
-      rows={props.rows}
       variant="outlined"
-      label={props.label}
       style={styledInput}
+      {...props}
     />
   );
   if (props.line)
     button = (
       <TextField
         size="small"
-        name={props.name}
-        type={props.type}
-        rows={props.rows}
         multiline
         variant="outlined"
-        label={props.label}
         style={styledInput}
+        {...props}
       />
     );
   return <div>{button}</div>;

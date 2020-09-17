@@ -23,6 +23,7 @@ function LabelPreview() {
         userName,
         contactInfo,
         setShowModal } = useContext(StateContext);
+        
     return (
         <div className='panel-container'>
             <div className='main-bg-wrapper'>
@@ -72,8 +73,7 @@ function LabelPreview() {
                     <div className="buttons-wrapper">    
                         <CustomButton endIcon={<SaveOutlinedIcon/>} name='Save' />                                                
                         <CustomButton endIcon={<ShareOutlinedIcon/>}name='Share' />
-                        <CustomButton endIcon={<PrintOutlinedIcon/>} name='Print' onClick={ () => { console.log("clicked button") ; setShowModal(true);}} />                     
-                            
+                        <CustomButton endIcon={<PrintOutlinedIcon/>} name='Print' onClick={ () => { console.log("clicked button") ; setShowModal(true);}} />                                                 
                     </div>                                        
                 </div>
             </div>

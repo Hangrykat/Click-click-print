@@ -1,8 +1,4 @@
 import React, { useContext } from "react";
-import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
-import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
-
-import CustomButton from "../CustomUI/CustomButton";
 import CustomDateInput from "../CustomUI/CustomDateInput";
 import CustomTextInput from "../CustomUI/CustomTextInput";
 
@@ -20,8 +16,9 @@ function Input() {
     setDescription,
     setUserName,
     setContactInfo } = useContext(StateContext);
+
   function handleLabelInfo(e) {
-    e.preventDefault();
+    e.preventDefault();    
     setProductName(e.target.product.value);
     setChemicalFormula(e.target.formula.value);
     setDate(e.target.date.value);
@@ -36,29 +33,29 @@ function Input() {
         <form
           id="label-info"
           className="secondary-bg-wrapper"
-          onSubmit={handleLabelInfo}
         >
           <div className="title-big">Step 1: Enter label information</div>
           <div className="input-panel-wrapper">
             <div className="input-panel">
               <div className="title-mid">About Product</div>
               <div className="input-field-wrapper">
-                <CustomTextInput name="product" label="Product name" />
-                <CustomTextInput name="formula" label="Chemical formula" />
+                <CustomTextInput name="product" label="Product name" onChange={(e) => setProductName(e.target.value)}/>
+                <CustomTextInput name="formula" label="Chemical formula" onChange={(e) => setChemicalFormula(e.target.value)}/>
                 <CustomTextInput
                   name="description"
                   label="Description"
                   line="multiline"
                   rows="3"
+                  onChange={(e) => setDescription(e.target.value)}
                 />
-                <CustomTextInput name="owner" label="Name/ID number" />
-                <CustomTextInput name="contactInfo" label="Contact info" />
+                <CustomTextInput name="owner" label="Name/ID number" onChange={(e) => setUserName(e.target.value)}/>
+                <CustomTextInput name="contactInfo" label="Contact info" onChange={(e) => setContactInfo(e.target.value)}/>
                 <div className='flex-wrapper'>
                   <div className='flex-grow'>         
-                    <CustomDateInput name="date" label="Date" />
+                    <CustomDateInput name="date" label="Date" onChange={(e) => setDate(e.target.value)}/>
                   </div>
                   <div className='flex-grow'> 
-                    <CustomDateInput name="eDate" label="Possible expiry date" />
+                    <CustomDateInput name="eDate" label="Possible expiry date" onChange={(e) => setExpiryDate(e.target.value)}/>
                   </div>
                 </div> 
 
@@ -101,15 +98,6 @@ function Input() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="buttons-wrapper">
-            <CustomButton
-              icon={<AddCircleOutlineOutlinedIcon />}
-              name="Create"
-              type="submit"
-              form="label-info"
-            />
-            <CustomButton icon={<EditOutlinedIcon />} name="Edit" />
           </div>
         </form>
       </div>
