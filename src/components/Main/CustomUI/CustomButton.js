@@ -14,11 +14,9 @@ function CustomButton(props) {
   };
   return (
     <div>
-      <Button
-        type={props.type}
-        form={props.form}
-        endIcon={props.icon}
+      <Button 
         style={styledButton}
+        {...props}
       >
         {props.name}
       </Button>

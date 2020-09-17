@@ -1,5 +1,6 @@
 import React,{useContext} from 'react'
 import './LabelPreview.css'
+import "../../../shared-style.css"
 
 import SaveOutlinedIcon from '@material-ui/icons/SaveOutlined';
 import PrintOutlinedIcon from '@material-ui/icons/PrintOutlined';
@@ -20,7 +21,8 @@ function LabelPreview() {
         expiryDate,
         description,
         userName,
-        contactInfo } = useContext(StateContext);
+        contactInfo,
+        setShowModal } = useContext(StateContext);
     return (
         <div className='panel-container'>
             <div className='main-bg-wrapper'>
@@ -30,10 +32,9 @@ function LabelPreview() {
                         <div className='label-wrapper'>
                             <div className='label'>
                                 <div className='label-sheet'>
-                                    <div className="name-container">
+                                    <div className="flex-center padding">
                                         <div className='title-blackBG'>{productName} ({chemicalFormula})</div>                                        
-                                    </div>
-                                
+                                    </div>                                
                                     <div className="description-container">
                                         <div className='label-text'>Date:{date}</div> 
                                         <div className='label-text'>Expiry Date:{expiryDate}</div> 
@@ -44,7 +45,7 @@ function LabelPreview() {
                                 </div>
                                 <div className='label-sheet'>
                                     <div className='title-label'>Hazardous Symbols</div>
-                                    <div className='symbols-wrapper'>
+                                    <div className='flex-center margin'>
                                         <div className='symbol'>
                                             <img src={logoExplosive} />
                                         </div>
@@ -69,9 +70,10 @@ function LabelPreview() {
                             <div className="small-label title-label">Label 3</div>
                         </div>
                     <div className="buttons-wrapper">    
-                        <CustomButton icon={<SaveOutlinedIcon/>} name='Save' />
-                        <CustomButton icon={<PrintOutlinedIcon/>} name='Print' />
-                        <CustomButton icon={<ShareOutlinedIcon/>}name='Share' />
+                        <CustomButton endIcon={<SaveOutlinedIcon/>} name='Save' />                                                
+                        <CustomButton endIcon={<ShareOutlinedIcon/>}name='Share' />
+                        <CustomButton endIcon={<PrintOutlinedIcon/>} name='Print' onClick={ () => { console.log("clicked button") ; setShowModal(true);}} />                     
+                            
                     </div>                                        
                 </div>
             </div>

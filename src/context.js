@@ -10,6 +10,7 @@ const ContextProvider = ({ children }) => {
     const [description, setDescription] = useState();
     const [userName, setUserName] = useState();
     const [contactInfo, setContactInfo] = useState();
+    const [showModal, setShowModal] = useState(false)
 
   
     return (
@@ -28,7 +29,9 @@ const ContextProvider = ({ children }) => {
           userName,
           setUserName,
           contactInfo,
-          setContactInfo
+          setContactInfo,
+          showModal,
+          setShowModal
         }}
       >
         {children}

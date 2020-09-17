@@ -9,6 +9,8 @@ import CustomTextInput from "../CustomUI/CustomTextInput";
 import { StateContext } from "../../../context"
 
 import "./Input.css";
+import "../../../shared-style.css"
+
 function Input() {
   const {
     setProductName,
@@ -68,15 +70,15 @@ function Input() {
                 <div className="single-line-input">
                   <p>Choose symbols:</p>
                 </div>
-                <div className="symbols-wrapper">
+                <div className="flex-center margin">
                   <div className='symbol'>
-                    <a><img src="" alt="explosive" /></a>
+                    <img src="" alt="explosive"/>
                   </div>
                   <div className='symbol'>
-                    <a><img src="" alt="corrosive"/></a>
+                    <img src="" alt="corrosive"/>
                   </div>
                   <div className='symbol'>
-                    <a><img src="" alt="flammable"/></a>
+                    <img src="" alt="flammable"/>
                   </div>
                   <div className='symbol'>
                     <a><img src="" alt="environment danger"/></a>
