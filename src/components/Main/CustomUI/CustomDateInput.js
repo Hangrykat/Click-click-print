@@ -22,13 +22,12 @@ function CustomDateInput(props) {
     <div>
       <TextField
         size="small"
-        name={props.name}
         onFocus={() => handleInputType("date")}
         onBlur={() => handleInputType("")}
         type={inputType}
         variant="outlined"
-        label={props.label}
         style={styledInput}
+        {...props}
       />
     </div>
   );
