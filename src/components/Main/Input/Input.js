@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import CustomDateInput from "../CustomUI/CustomDateInput";
 import CustomTextInput from "../CustomUI/CustomTextInput";
 
@@ -8,27 +8,9 @@ import "./Input.css";
 import "../../../shared-styles.css";
 
 function Input() {
-  const {
-    setProductName,
-    setChemicalFormula,
-    setDate,
-    setExpiryDate,
-    setDescription,
-    setUserName,
-    setContactInfo,
-    setHazardousSymbols,
-    hazardousSymbols,
-  } = useContext(StateContext);
-  function handleLabelInfo(e) {
-    e.preventDefault();
-    setProductName(e.target.product.value);
-    setChemicalFormula(e.target.formula.value);
-    setDate(e.target.date.value);
-    setExpiryDate(e.target.eDate.value);
-    setDescription(e.target.description.value);
-    setUserName(e.target.owner.value);
-    setContactInfo(e.target.contactInfo.value);
-  }
+  const { setHazardousSymbols, hazardousSymbols, label, setLabel } = useContext(
+    StateContext
+  );
   function handleSymbols(symbol) {
     if (hazardousSymbols.includes(symbol)) {
       setHazardousSymbols(
@@ -51,43 +33,58 @@ function Input() {
                 <CustomTextInput
                   name="product"
                   label="Product name"
-                  onChange={(e) => setProductName(e.target.value)}
+                  onChange={(e) =>
+                    setLabel({ ...label, productName: e.target.value })
+                  }
                 />
+                {console.log(label)}
                 <CustomTextInput
                   name="formula"
                   label="Chemical formula"
-                  onChange={(e) => setChemicalFormula(e.target.value)}
+                  onChange={(e) =>
+                    setLabel({ ...label, chemicalFormula: e.target.value })
+                  }
                 />
                 <CustomTextInput
                   name="description"
                   label="Description"
                   line="multiline"
                   rows="3"
-                  onChange={(e) => setDescription(e.target.value)}
+                  onChange={(e) =>
+                    setLabel({ ...label, description: e.target.value })
+                  }
                 />
                 <CustomTextInput
                   name="owner"
                   label="Name/ID number"
-                  onChange={(e) => setUserName(e.target.value)}
+                  onChange={(e) =>
+                    setLabel({ ...label, owner: e.target.value })
+                  }
                 />
                 <CustomTextInput
                   name="contactInfo"
                   label="Contact info"
-                  onChange={(e) => setContactInfo(e.target.value)}
+                  onChange={(e) =>
+                    setLabel({ ...label, contactInfo: e.target.value })
+                  }
                 />
                 <div className="flex-wrapper">
                   <div className="flex-grow">
                     <CustomDateInput
                       name="date"
                       label="Date"
-                      onChange={(e) => setDate(e.target.value)}
+                      onChange={(e) =>
+                        setLabel({ ...label, date: e.target.value })
+                      }
                     />
                   </div>
                   <div className="flex-grow">
                     <CustomDateInput
                       name="eDate"
                       label="Possible expiry date"
-                      onChange={(e) => setExpiryDate(e.target.value)}
+                      onChange={(e) =>
+                        setLabel({ ...label, eDate: e.target.value })
+                      }
                     />
                   </div>
                 </div>

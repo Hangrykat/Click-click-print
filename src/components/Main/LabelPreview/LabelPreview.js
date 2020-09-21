@@ -10,17 +10,7 @@ import CustomButton from "../CustomUI/CustomButton";
 import { StateContext } from "../../../context";
 
 function LabelPreview() {
-  const {
-    productName,
-    chemicalFormula,
-    date,
-    expiryDate,
-    description,
-    userName,
-    contactInfo,
-    hazardousSymbols,
-    setShowModal,
-  } = useContext(StateContext);
+  const { hazardousSymbols, setShowModal, label } = useContext(StateContext);
   function showSymbol(symbol) {
     return (
       <div className="symbol">
@@ -40,15 +30,19 @@ function LabelPreview() {
                 <div className="label-sheet">
                   <div className="flex-center padding">
                     <div className="title-blackBG">
-                      {productName} ({chemicalFormula})
+                      {label.productName} ({label.chemicalFormula})
                     </div>
                   </div>
                   <div className="description-container">
-                    <div className="label-text">Date:{date}</div>
-                    <div className="label-text">Expiry Date:{expiryDate}</div>
-                    <div className="label-text">Description:{description}</div>
-                    <div className="label-text">Name/ID No:{userName}</div>
-                    <div className="label-text">Contact:{contactInfo}</div>
+                    <div className="label-text">Date:{label.date}</div>
+                    <div className="label-text">Expiry Date:{label.eDate}</div>
+                    <div className="label-text">
+                      Description:{label.description}
+                    </div>
+                    <div className="label-text">Name/ID No:{label.owner}</div>
+                    <div className="label-text">
+                      Contact:{label.contactInfo}
+                    </div>
                   </div>
                 </div>
                 <div className="label-sheet">
@@ -63,6 +57,9 @@ function LabelPreview() {
               </div>
             </div>
           </div>
+          <div className="save-button-wrapper">
+            <CustomButton endIcon={<SaveOutlinedIcon />} name="Save" />
+          </div>
           <div className="title-big">Step 3: Manage label and file</div>
           <div className="collection-wrapper flex-center">
             <div className="small-label title-label">Label 1</div>
@@ -70,7 +67,6 @@ function LabelPreview() {
             <div className="small-label title-label">Label 3</div>
           </div>
           <div className="buttons-wrapper">
-            <CustomButton endIcon={<SaveOutlinedIcon />} name="Save" />
             <CustomButton endIcon={<ShareOutlinedIcon />} name="Share" />
             <CustomButton
               endIcon={<PrintOutlinedIcon />}

@@ -57,3 +57,8 @@
   width: 40px;
   margin: 0px;
 }
+
+.save-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
