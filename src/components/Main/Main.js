@@ -2,6 +2,7 @@ import React from 'react'
 import LabelPreview from './LabelPreview/LabelPreview'
 import Input from './Input/Input'
 import PrintPreview from './PrintPreview/PrintPreview'
+import PdfPreview from './Pdf/PdfPreview'
 import './Main.css'
 
 function Main() {
@@ -12,6 +13,7 @@ function Main() {
                 <LabelPreview />
             </div>
             <PrintPreview />
+            <PdfPreview />
         </div>
     )
 }

@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import "./LabelPreview.css";
 import "../../../shared-styles.css";
 
-import SaveOutlinedIcon from "@material-ui/icons/SaveOutlined";
 import PrintOutlinedIcon from "@material-ui/icons/PrintOutlined";
 import ShareOutlinedIcon from "@material-ui/icons/ShareOutlined";
 
@@ -19,7 +18,8 @@ function LabelPreview() {
     userName,
     contactInfo,
     hazardousSymbols,
-    setShowModal,
+    setShowModalPreview,
+    setShowModalPdf
   } = useContext(StateContext);
   function showSymbol(symbol) {
     return (
@@ -70,14 +70,20 @@ function LabelPreview() {
             <div className="small-label title-label">Label 3</div>
           </div>
           <div className="buttons-wrapper">
-            <CustomButton endIcon={<SaveOutlinedIcon />} name="Save" />
             <CustomButton endIcon={<ShareOutlinedIcon />} name="Share" />
             <CustomButton
               endIcon={<PrintOutlinedIcon />}
-              name="Print"
+              name="Preview"
               onClick={() => {
-                console.log("clicked button");
-                setShowModal(true);
+                setShowModalPreview(true);
+              }}
+            />
+            <CustomButton
+              endIcon={<PrintOutlinedIcon />}
+              name="PDF"
+              onClick={() => {
+                setShowModalPdf(true);
+                console.log("PDF")
               }}
             />
           </div>

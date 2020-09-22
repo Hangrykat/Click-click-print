@@ -1,25 +1,25 @@
 import React, { useContext } from "react";
-import "../../../shared-styles.css";
+import "./PrintPreview.css";
 import { StateContext } from "../../../context";
 
 function PrintPreview() {
-  const { setShowModal, showModal } = useContext(StateContext);
+  const { setShowModalPreview, showModalPreview } = useContext(StateContext);
 
   return (
     <div className="print-preview">
-      {showModal ? (
+      {showModalPreview ? (
         <div
           id="modal-wrap"
           className="visible"
-          onClick={() => setShowModal(false)}
+          onClick={() => setShowModalPreview(false)}
         ></div>
       ) : (
         <div id="modal-wrap"></div>
       )}
       <div className="modal-window">
-        <button onClick={() => setShowModal(false)}>Back</button>
+        <button onClick={() => setShowModalPreview(false)}>Back</button>
         <div className="modal-content">
-          <h1>Print Preview</h1>
+            <h1>Drag and Drop Labels</h1>
         </div>
       </div>
     </div>

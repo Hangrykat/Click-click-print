@@ -10,7 +10,8 @@ const ContextProvider = ({ children }) => {
   const [description, setDescription] = useState();
   const [userName, setUserName] = useState();
   const [contactInfo, setContactInfo] = useState();
-  const [showModal, setShowModal] = useState(false);
+  const [showModalPdf, setShowModalPdf] = useState(false);
+  const [showModalPreview, setShowModalPreview] = useState(false);
   const [hazardousSymbols, setHazardousSymbols] = useState([]);
 
   return (
@@ -30,8 +31,10 @@ const ContextProvider = ({ children }) => {
         setUserName,
         contactInfo,
         setContactInfo,
-        showModal,
-        setShowModal,
+        showModalPdf,
+        setShowModalPdf,
+        showModalPreview,
+        setShowModalPreview,
         hazardousSymbols,
         setHazardousSymbols,
       }}
