@@ -6,6 +6,7 @@ const ContextProvider = ({ children }) => {
   const [showModal, setShowModal] = useState(false);
   const [hazardousSymbols, setHazardousSymbols] = useState([]);
   const [label, setLabel] = useState({
+    id: "",
     productName: "",
     chemicalFormula: "",
     description: "",
@@ -13,7 +14,9 @@ const ContextProvider = ({ children }) => {
     contactInfo: "",
     date: "",
     eDate: "",
+    symbols: [],
   });
+  const [labelsArray, setLabelsArray] = useState([]);
 
   return (
     <StateContext.Provider
@@ -24,6 +27,8 @@ const ContextProvider = ({ children }) => {
         setHazardousSymbols,
         label,
         setLabel,
+        labelsArray,
+        setLabelsArray,
       }}
     >
       {children}

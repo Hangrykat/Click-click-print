@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import CustomDateInput from "../CustomUI/CustomDateInput";
 import CustomTextInput from "../CustomUI/CustomTextInput";
 
@@ -14,10 +14,15 @@ function Input() {
   function handleSymbols(symbol) {
     if (hazardousSymbols.includes(symbol)) {
       setHazardousSymbols(
-        hazardousSymbols.filter((symbols) => symbols != symbol)
+        hazardousSymbols.filter((symbols) => symbols !== symbol)
       );
+      setLabel({
+        ...label,
+        symbols: hazardousSymbols.filter((symbols) => symbols !== symbol),
+      });
     } else {
       setHazardousSymbols([...hazardousSymbols, symbol]);
+      setLabel({ ...label, symbols: [...hazardousSymbols, symbol] });
     }
   }
 
@@ -37,7 +42,6 @@ function Input() {
                     setLabel({ ...label, productName: e.target.value })
                   }
                 />
-                {console.log(label)}
                 <CustomTextInput
                   name="formula"
                   label="Chemical formula"

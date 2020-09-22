@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./LabelPreview.css";
 import "../../../shared-styles.css";
+import nextId from "react-id-generator";
 
 import SaveOutlinedIcon from "@material-ui/icons/SaveOutlined";
 import PrintOutlinedIcon from "@material-ui/icons/PrintOutlined";
@@ -8,15 +9,28 @@ import ShareOutlinedIcon from "@material-ui/icons/ShareOutlined";
 
 import CustomButton from "../CustomUI/CustomButton";
 import { StateContext } from "../../../context";
+import Label from "./Label/Label";
+import MiniLabel from "./MiniLabel/Minilabel";
 
 function LabelPreview() {
-  const { hazardousSymbols, setShowModal, label } = useContext(StateContext);
+  const { setShowModal, label, setLabelsArray, labelsArray } = useContext(
+    StateContext
+  );
+  function saveHandler(label, labelsArray) {
+    setLabelsArray([...labelsArray, label]);
+  }
   function showSymbol(symbol) {
     return (
       <div className="symbol">
-        <img src={require(`../../../assets/symbols/${symbol}.jpg`)} />
+        <img
+          src={require(`../../../assets/symbols/${symbol}.jpg`)}
+          alt="Symbol"
+        />
       </div>
     );
+  }
+  function previewSavedLabels(label) {
+    return <MiniLabel label={label} />;
   }
 
   return (
@@ -25,46 +39,18 @@ function LabelPreview() {
         <div className="secondary-bg-wrapper">
           <div className="title-big">Step 2: Check the preview</div>
           <div className="preview-panel">
-            <div className="label-wrapper">
-              <div className="label">
-                <div className="label-sheet">
-                  <div className="flex-center padding">
-                    <div className="title-blackBG">
-                      {label.productName} ({label.chemicalFormula})
-                    </div>
-                  </div>
-                  <div className="description-container">
-                    <div className="label-text">Date:{label.date}</div>
-                    <div className="label-text">Expiry Date:{label.eDate}</div>
-                    <div className="label-text">
-                      Description:{label.description}
-                    </div>
-                    <div className="label-text">Name/ID No:{label.owner}</div>
-                    <div className="label-text">
-                      Contact:{label.contactInfo}
-                    </div>
-                  </div>
-                </div>
-                <div className="label-sheet">
-                  <div className="title-label">Hazardous Symbols</div>
-                  <div className="flex-center margin symbol-wrapper">
-                    {hazardousSymbols.map((elem) => showSymbol(elem))}
-                  </div>
-                  <div id="diamond" className="warning-diamond">
-                    Warning Diamond
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Label label={label} />
           </div>
           <div className="save-button-wrapper">
-            <CustomButton endIcon={<SaveOutlinedIcon />} name="Save" />
+            <CustomButton
+              endIcon={<SaveOutlinedIcon />}
+              name="Save"
+              onClick={() => saveHandler(label, labelsArray)}
+            />
           </div>
           <div className="title-big">Step 3: Manage label and file</div>
           <div className="collection-wrapper flex-center">
-            <div className="small-label title-label">Label 1</div>
-            <div className="small-label title-label">Label 2</div>
-            <div className="small-label title-label">Label 3</div>
+            {labelsArray.map((elem) => previewSavedLabels(elem))}
           </div>
           <div className="buttons-wrapper">
             <CustomButton endIcon={<ShareOutlinedIcon />} name="Share" />
@@ -72,7 +58,6 @@ function LabelPreview() {
               endIcon={<PrintOutlinedIcon />}
               name="Print"
               onClick={() => {
-                console.log("clicked button");
                 setShowModal(true);
               }}
             />
