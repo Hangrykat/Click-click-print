@@ -3,7 +3,8 @@ import React, { createContext, useState } from "react";
 export const StateContext = createContext({});
 
 const ContextProvider = ({ children }) => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModalPdf, setShowModalPdf] = useState(false);
+  const [showModalPreview, setShowModalPreview] = useState(false);
   const [hazardousSymbols, setHazardousSymbols] = useState([]);
   const [label, setLabel] = useState({
     id: "",
@@ -21,8 +22,10 @@ const ContextProvider = ({ children }) => {
   return (
     <StateContext.Provider
       value={{
-        showModal,
-        setShowModal,
+        showModalPdf,
+        setShowModalPdf,
+        showModalPreview,
+        setShowModalPreview,
         hazardousSymbols,
         setHazardousSymbols,
         label,

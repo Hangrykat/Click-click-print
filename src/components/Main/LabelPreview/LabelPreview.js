@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import "./LabelPreview.css";
 import "../../../shared-styles.css";
 import nextId from "react-id-generator";
+import SaveOutlinedIcon from "@material-ui/icons/SaveAltOutlined";
 
-import SaveOutlinedIcon from "@material-ui/icons/SaveOutlined";
 import PrintOutlinedIcon from "@material-ui/icons/PrintOutlined";
 import ShareOutlinedIcon from "@material-ui/icons/ShareOutlined";
 
@@ -13,9 +13,13 @@ import Label from "./Label/Label";
 import MiniLabel from "./MiniLabel/Minilabel";
 
 function LabelPreview() {
-  const { setShowModal, label, setLabelsArray, labelsArray } = useContext(
-    StateContext
-  );
+  const {
+    label,
+    labelsArray,
+    setLabelsArray,
+    setShowModalPreview,
+    setShowModalPdf,
+  } = useContext(StateContext);
   function saveHandler(label, labelsArray) {
     setLabelsArray([...labelsArray, label]);
   }
@@ -45,7 +49,7 @@ function LabelPreview() {
             <CustomButton
               endIcon={<SaveOutlinedIcon />}
               name="Save"
-              onClick={() => saveHandler(label, labelsArray)}
+              onClick={() => saveHandler({ label }, { labelsArray })}
             />
           </div>
           <div className="title-big">Step 3: Manage label and file</div>
@@ -56,9 +60,17 @@ function LabelPreview() {
             <CustomButton endIcon={<ShareOutlinedIcon />} name="Share" />
             <CustomButton
               endIcon={<PrintOutlinedIcon />}
-              name="Print"
+              name="Preview"
               onClick={() => {
-                setShowModal(true);
+                setShowModalPreview(true);
+              }}
+            />
+            <CustomButton
+              endIcon={<PrintOutlinedIcon />}
+              name="PDF"
+              onClick={() => {
+                setShowModalPdf(true);
+                console.log("PDF");
               }}
             />
           </div>
