@@ -12,7 +12,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-id-generator": "^3.0.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-textfit": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
