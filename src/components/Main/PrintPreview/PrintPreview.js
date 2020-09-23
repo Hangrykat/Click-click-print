@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./PrintPreview.css";
 import { StateContext } from "../../../context";
+import LabelsToPrint from "./LabelsToPrint"
 
 function PrintPreview() {
   const { setShowModalPreview, showModalPreview } = useContext(StateContext);
@@ -19,7 +20,7 @@ function PrintPreview() {
       <div className="modal-window">
         <button onClick={() => setShowModalPreview(false)}>Back</button>
         <div className="modal-content">
-            <h1>Drag and Drop Labels</h1>
+            <LabelsToPrint />
         </div>
       </div>
     </div>
