@@ -15,26 +15,56 @@ import MiniLabel from "./MiniLabel/Minilabel";
 function LabelPreview() {
   const {
     label,
+    setLabel,
     labelsArray,
     setLabelsArray,
     setShowModalPreview,
     setShowModalPdf,
+    setHazardousSymbols,
   } = useContext(StateContext);
   function saveHandler(label, labelsArray) {
-    setLabelsArray([...labelsArray, label]);
-  }
-  function showSymbol(symbol) {
-    return (
-      <div className="symbol">
-        <img
-          src={require(`../../../assets/symbols/${symbol}.jpg`)}
-          alt="Symbol"
-        />
-      </div>
-    );
+    if (label.id === "") {
+      label.id = nextId();
+      setLabelsArray([...labelsArray, label]);
+      setLabel({
+        id: "",
+        productName: "",
+        chemicalFormula: "",
+        description: "",
+        owner: "",
+        contactInfo: "",
+        date: "",
+        eDate: "",
+        symbols: [],
+        NFPA: { redIndex: "", blueIndex: "", yellowIndex: "", whiteIndex: "" },
+      });
+      setHazardousSymbols([]);
+    } else {
+      setLabelsArray([
+        ...labelsArray.filter((elem) => elem.id !== label.id),
+        label,
+      ]);
+      setLabel({
+        id: "",
+        productName: "",
+        chemicalFormula: "",
+        description: "",
+        owner: "",
+        contactInfo: "",
+        date: "",
+        eDate: "",
+        symbols: [],
+        NFPA: { redIndex: "", blueIndex: "", yellowIndex: "", whiteIndex: "" },
+      });
+    }
   }
   function previewSavedLabels(label) {
-    return <MiniLabel label={label} />;
+    if (label.id !== "") {
+      console.log(label);
+      return <MiniLabel label={label} />;
+    } else {
+      return "";
+    }
   }
 
   return (
@@ -49,12 +79,14 @@ function LabelPreview() {
             <CustomButton
               endIcon={<SaveOutlinedIcon />}
               name="Save"
-              onClick={() => saveHandler({ label }, { labelsArray })}
+              onClick={() => saveHandler(label, labelsArray)}
             />
           </div>
           <div className="title-big">Step 3: Manage label and file</div>
           <div className="collection-wrapper flex-center">
-            {labelsArray.map((elem) => previewSavedLabels(elem))}
+            {labelsArray !== []
+              ? labelsArray.map((elem) => previewSavedLabels(elem))
+              : ""}
           </div>
           <div className="buttons-wrapper">
             <CustomButton endIcon={<ShareOutlinedIcon />} name="Share" />
@@ -70,7 +102,6 @@ function LabelPreview() {
               name="PDF"
               onClick={() => {
                 setShowModalPdf(true);
-                console.log("PDF");
               }}
             />
           </div>

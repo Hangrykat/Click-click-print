@@ -1,7 +1,8 @@
 import React from "react";
+import "./Label.css";
 
 function Label({ label }) {
-  console.log(label);
+  console.log(label.NFPA);
   function showSymbol(symbol) {
     return (
       <div className="symbol">
@@ -33,10 +34,23 @@ function Label({ label }) {
           <div className="label-sheet">
             <div className="title-label">Hazardous Symbols</div>
             <div className="flex-center margin symbol-wrapper">
-              {label.symbols.map((elem) => showSymbol(elem))}
+              {label.symbols
+                ? label.symbols.map((elem) => showSymbol(elem))
+                : ""}
             </div>
             <div id="diamond" className="warning-diamond">
               Warning Diamond
+              <div className="diamond-wrapper">
+                <img
+                  className="NFPA"
+                  src={require("../../../../assets/symbols/NFPA_704.svg")}
+                  alt="NFPA 704 symbol"
+                ></img>
+                <div className="redIndex">{label.NFPA.redIndex}</div>
+                <div className="blueIndex">{label.NFPA.blueIndex}</div>
+                <div className="yellowIndex">{label.NFPA.yellowIndex}</div>
+                <div className="whiteIndex">{label.NFPA.whiteIndex}</div>
+              </div>
             </div>
           </div>
         </div>
