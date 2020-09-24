@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
-import CustomDateInput from "../CustomUI/CustomDateInput";
-import CustomTextInput from "../CustomUI/CustomTextInput";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import { StateContext } from "../../../context";
-
+import TextInput from "./TextInput/TextInput";
 import "./Input.css";
 import "../../../shared-styles.css";
 import { easing } from "@material-ui/core";
@@ -67,69 +65,8 @@ function Input() {
           <div className="title-big">Step 1: Enter label information</div>
           <div className="input-panel-wrapper">
             <div className="input-panel">
-              <div className="title-mid">About Product</div>
-              <div className="input-field-wrapper">
-                <CustomTextInput
-                  name="product"
-                  label="Product name"
-                  onChange={(e) =>
-                    setLabel({ ...label, productName: e.target.value })
-                  }
-                />
-                <CustomTextInput
-                  name="formula"
-                  label="Chemical formula"
-                  onChange={(e) =>
-                    setLabel({ ...label, chemicalFormula: e.target.value })
-                  }
-                />
-                <CustomTextInput
-                  name="description"
-                  label="Description"
-                  line="multiline"
-                  rows="3"
-                  onChange={(e) =>
-                    setLabel({ ...label, description: e.target.value })
-                  }
-                />
-                <CustomTextInput
-                  name="owner"
-                  label="Name/ID number"
-                  onChange={(e) =>
-                    setLabel({ ...label, owner: e.target.value })
-                  }
-                />
-                <CustomTextInput
-                  name="contactInfo"
-                  label="Contact info"
-                  onChange={(e) =>
-                    setLabel({ ...label, contactInfo: e.target.value })
-                  }
-                />
-                <div className="flex-wrapper">
-                  <div className="flex-grow">
-                    <CustomDateInput
-                      name="date"
-                      label="Date"
-                      onChange={(e) =>
-                        setLabel({ ...label, date: e.target.value })
-                      }
-                    />
-                  </div>
-                  <div className="flex-grow">
-                    <CustomDateInput
-                      name="eDate"
-                      label="Possible expiry date"
-                      onChange={(e) =>
-                        setLabel({ ...label, eDate: e.target.value })
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="input-panel">
               <div className="input-field">
+                <TextInput />
                 <div className="single-line-input">
                   <p>Choose symbols:</p>
                 </div>

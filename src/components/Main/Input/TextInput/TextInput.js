@@ -4,6 +4,7 @@ import CustomTextInput from "../../CustomUI/CustomTextInput";
 import { StateContext } from "../../../../context";
 
 function TextInput() {
+  const { setLabel, label } = useContext(StateContext);
   return (
     <div className="input-panel">
       <div className="title-mid">About Product</div>
