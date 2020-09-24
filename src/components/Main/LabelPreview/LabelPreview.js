@@ -19,9 +19,9 @@ function LabelPreview() {
     labelsArray,
     setLabelsArray,
     setShowModalPreview,
-    setShowModalPdf,
     setHazardousSymbols,
   } = useContext(StateContext);
+
   function saveHandler(label, labelsArray) {
     if (label.id === "") {
       label.id = nextId();
@@ -95,13 +95,6 @@ function LabelPreview() {
               name="Preview"
               onClick={() => {
                 setShowModalPreview(true);
-              }}
-            />
-            <CustomButton
-              endIcon={<PrintOutlinedIcon />}
-              name="PDF"
-              onClick={() => {
-                setShowModalPdf(true);
               }}
             />
           </div>

@@ -129,7 +129,6 @@ function Input() {
               </div>
             </div>
             <div className="input-panel">
-              <div className="title-mid">Hazardous symbols</div>
               <div className="input-field">
                 <div className="single-line-input">
                   <p>Choose symbols:</p>

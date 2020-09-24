@@ -2,6 +2,8 @@ import React from "react";
 import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
 
 function Pdf({ productName }) {
+  // const {productName} = useContext(StateContext);
+
   const styles = StyleSheet.create({
     page: {
       display: "flex",
@@ -9,8 +11,6 @@ function Pdf({ productName }) {
       alignItems: "center",
       border: "solid black",
       borderWidth: 0.5,
-      width: "50%",
-      height: "80%",
     },
     section: {
       margin: 10,
