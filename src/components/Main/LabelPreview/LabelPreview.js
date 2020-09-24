@@ -18,8 +18,8 @@ function LabelPreview() {
     labelsArray,
     setLabelsArray,
     setShowModalPreview,
-    setShowModalPdf,
   } = useContext(StateContext);
+  
   function saveHandler(label, labelsArray) {
     setLabelsArray([...labelsArray, label]);
   }
@@ -63,14 +63,6 @@ function LabelPreview() {
               name="Preview"
               onClick={() => {
                 setShowModalPreview(true);
-              }}
-            />
-            <CustomButton
-              endIcon={<PrintOutlinedIcon />}
-              name="PDF"
-              onClick={() => {
-                setShowModalPdf(true);
-                console.log("PDF");
               }}
             />
           </div>
