@@ -41,8 +41,19 @@ function MiniLabel({ label }) {
           <div className="flex-center margin minisymbol-wrapper">
             {label.symbols ? label.symbols.map((elem) => showSymbol(elem)) : ""}
           </div>
-          <div id="diamond" className="miniwarning-diamond">
-            Warning Diamond
+          <div id="diamond" className="warning-diamond">
+            <p className="NFPAtitle">Warning Diamond</p>
+            <div className="diamond-wrapper">
+              <img
+                className="miniNFPA"
+                src={require("../../../../assets/symbols/NFPA_704.svg")}
+                alt="NFPA 704 symbol"
+              ></img>
+              <div className="redIndex">{label.NFPA.redIndex}</div>
+              <div className="blueIndex">{label.NFPA.blueIndex}</div>
+              <div className="yellowIndex">{label.NFPA.yellowIndex}</div>
+              <div className="whiteIndex">{label.NFPA.whiteIndex}</div>
+            </div>
           </div>
         </div>
       </div>

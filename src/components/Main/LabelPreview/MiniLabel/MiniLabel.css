@@ -61,3 +61,11 @@
 .minipadding {
   padding: 5px;
 }
+
+.miniNFPA {
+  height: 15px;
+}
+
+.NFPAtitle {
+  font-size: 4px;
+}

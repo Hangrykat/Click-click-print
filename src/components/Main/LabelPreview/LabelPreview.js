@@ -36,6 +36,7 @@ function LabelPreview() {
         date: "",
         eDate: "",
         symbols: [],
+        NFPA: { redIndex: "", blueIndex: "", yellowIndex: "", whiteIndex: "" },
       });
       setHazardousSymbols([]);
     } else {
@@ -53,6 +54,7 @@ function LabelPreview() {
         date: "",
         eDate: "",
         symbols: [],
+        NFPA: { redIndex: "", blueIndex: "", yellowIndex: "", whiteIndex: "" },
       });
     }
   }
@@ -82,7 +84,6 @@ function LabelPreview() {
           </div>
           <div className="title-big">Step 3: Manage label and file</div>
           <div className="collection-wrapper flex-center">
-            {console.log(labelsArray)}
             {labelsArray !== []
               ? labelsArray.map((elem) => previewSavedLabels(elem))
               : ""}
@@ -101,7 +102,6 @@ function LabelPreview() {
               name="PDF"
               onClick={() => {
                 setShowModalPdf(true);
-                console.log("PDF");
               }}
             />
           </div>
