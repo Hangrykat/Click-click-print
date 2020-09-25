@@ -51,12 +51,13 @@ function NFPAinput() {
               ...label,
               NFPA: {
                 ...label.NFPA,
-                redIndex: e.value[0],
+                [color]: e.value.slice(0, e.value.indexOf("-")),
               },
             })
           }
           value={""}
         />
+        {console.log(label)}
       </div>
     );
   }

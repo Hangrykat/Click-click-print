@@ -13,6 +13,7 @@ function TextInput() {
           name="product"
           label="Product name"
           onChange={(e) => setLabel({ ...label, productName: e.target.value })}
+          value={label.productName}
         />
         <CustomTextInput
           name="formula"
@@ -20,6 +21,7 @@ function TextInput() {
           onChange={(e) =>
             setLabel({ ...label, chemicalFormula: e.target.value })
           }
+          value={label.chemicalFormula}
         />
         <CustomTextInput
           name="description"
@@ -27,16 +29,19 @@ function TextInput() {
           line="multiline"
           rows="3"
           onChange={(e) => setLabel({ ...label, description: e.target.value })}
+          value={label.description}
         />
         <CustomTextInput
           name="owner"
           label="Name/ID number"
           onChange={(e) => setLabel({ ...label, owner: e.target.value })}
+          value={label.owner}
         />
         <CustomTextInput
           name="contactInfo"
           label="Contact info"
           onChange={(e) => setLabel({ ...label, contactInfo: e.target.value })}
+          value={label.contactInfo}
         />
         <div className="flex-wrapper">
           <div className="flex-grow">
@@ -44,6 +49,7 @@ function TextInput() {
               name="date"
               label="Date"
               onChange={(e) => setLabel({ ...label, date: e.target.value })}
+              value={label.date}
             />
           </div>
           <div className="flex-grow">
@@ -51,6 +57,7 @@ function TextInput() {
               name="eDate"
               label="Possible expiry date"
               onChange={(e) => setLabel({ ...label, eDate: e.target.value })}
+              value={label.eDate}
             />
           </div>
         </div>

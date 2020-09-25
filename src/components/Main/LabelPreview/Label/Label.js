@@ -46,10 +46,11 @@ function Label({ label }) {
                   src={require("../../../../assets/symbols/NFPA_704.svg")}
                   alt="NFPA 704 symbol"
                 ></img>
-                <div className="redIndex">{label.NFPA.redIndex}</div>
-                <div className="blueIndex">{label.NFPA.blueIndex}</div>
-                <div className="yellowIndex">{label.NFPA.yellowIndex}</div>
-                <div className="whiteIndex">{label.NFPA.whiteIndex}</div>
+                {console.log(label.NFPA)}
+                <div className="redIndex">{label.NFPA.redDiamond}</div>
+                <div className="blueIndex">{label.NFPA.blueDiamond}</div>
+                <div className="yellowIndex">{label.NFPA.yellowDiamond}</div>
+                <div className="whiteIndex">{label.NFPA.whiteDiamond}</div>
               </div>
             </div>
           </div>

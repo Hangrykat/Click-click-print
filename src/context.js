@@ -16,7 +16,12 @@ const ContextProvider = ({ children }) => {
     date: "",
     eDate: "",
     symbols: [],
-    NFPA: { redIndex: "", blueIndex: "", yellowIndex: "", whiteIndex: "" },
+    NFPA: {
+      redDiamond: "",
+      blueDiamond: "",
+      yellowDiamond: "",
+      whiteDiamond: "",
+    },
   });
   const [labelsArray, setLabelsArray] = useState([]);
 

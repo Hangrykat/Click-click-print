@@ -36,7 +36,12 @@ function LabelPreview() {
         date: "",
         eDate: "",
         symbols: [],
-        NFPA: { redIndex: "", blueIndex: "", yellowIndex: "", whiteIndex: "" },
+        NFPA: {
+          redDiamond: "",
+          blueDiamond: "",
+          yellowDiamond: "",
+          whiteDiamond: "",
+        },
       });
       setHazardousSymbols([]);
     } else {
@@ -54,7 +59,12 @@ function LabelPreview() {
         date: "",
         eDate: "",
         symbols: [],
-        NFPA: { redIndex: "", blueIndex: "", yellowIndex: "", whiteIndex: "" },
+        NFPA: {
+          redDiamond: "",
+          blueDiamond: "",
+          yellowDiamond: "",
+          whiteDiamond: "",
+        },
       });
     }
   }
