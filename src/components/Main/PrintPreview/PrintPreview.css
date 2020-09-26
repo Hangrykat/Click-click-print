@@ -31,3 +31,8 @@
 .div6 { grid-area: 3 / 2 / 4 / 3; }
 .div7 { grid-area: 4 / 1 / 5 / 2; }
 .div8 { grid-area: 4 / 2 / 5 / 3; }
+
+iframe{
+    width: 30%;
+    height: 85vh;
+}
