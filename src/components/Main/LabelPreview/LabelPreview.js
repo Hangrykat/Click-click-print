@@ -21,6 +21,7 @@ function LabelPreview() {
     setLabelsArray,
     setShowModalPreview,
     setHazardousSymbols,
+    selectedId,
   } = useContext(StateContext);
 
   function saveHandler(label, labelsArray) {
@@ -72,8 +73,10 @@ function LabelPreview() {
     }
   }
   function previewSavedLabels(label) {
-    if (label.id !== "") {
-      return <MiniLabel label={label} />;
+    if (label.id === selectedId) {
+      return <MiniLabel label={label} styled={true} />;
+    } else if (label.id !== "") {
+      return <MiniLabel label={label} styled={false} />;
     } else {
       return "";
     }

@@ -23,6 +23,7 @@ const ContextProvider = ({ children }) => {
     },
   });
   const [labelsArray, setLabelsArray] = useState([]);
+  const [selectedId, setSelectedId] = useState();
 
   return (
     <StateContext.Provider
@@ -35,6 +36,8 @@ const ContextProvider = ({ children }) => {
         setLabel,
         labelsArray,
         setLabelsArray,
+        selectedId,
+        setSelectedId,
       }}
     >
       {children}

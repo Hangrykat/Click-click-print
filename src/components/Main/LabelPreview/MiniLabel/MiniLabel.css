@@ -1,7 +1,12 @@
 .minilabel-wrapper {
-  background-color: #fff;
-  width: 7vw;
-  height: 10vh;
+  width: 8vw;
+  height: 11vh;
+  border-radius: 5px;
+}
+.selectedminilabel-wrapper {
+  background-color: black;
+  width: 8vw;
+  height: 11vh;
   border-radius: 5px;
 }
 
@@ -21,11 +26,14 @@
 }
 .minilabel {
   display: flex;
-  height: 100%;
+  height: 92%;
+  background-color: white;
+  margin: 3px;
+  border-radius: 5px;
 }
 
 .minilabel-sheet {
-  width: 50%;
+  width: 60%;
 }
 
 .minidescription-container {
@@ -46,8 +54,8 @@
 }
 
 .minisymbol {
-  height: 15px;
-  width: 15px;
+  height: 12px;
+  width: 12px;
   margin: 0px;
 }
 .minisymbol img {

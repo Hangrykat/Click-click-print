@@ -3,11 +3,39 @@ import { StateContext } from "../../../../context";
 import "./MiniLabel.css";
 import { Textfit } from "react-textfit";
 
-function MiniLabel({ label }) {
-  const { setLabel, setHazardousSymbols } = useContext(StateContext);
+function MiniLabel({ label, styled }) {
+  const {
+    setLabel,
+    setHazardousSymbols,
+    setSelectedId,
+    selectedId,
+  } = useContext(StateContext);
   function selectLabel(elem) {
-    setLabel(elem);
-    setHazardousSymbols(elem.symbols);
+    if (label.id === selectedId) {
+      setSelectedId("");
+      setLabel({
+        id: "",
+        productName: "",
+        chemicalFormula: "",
+        description: "",
+        owner: "",
+        contactInfo: "",
+        date: "",
+        eDate: "",
+        symbols: [],
+        NFPA: {
+          redDiamond: "",
+          blueDiamond: "",
+          yellowDiamond: "",
+          whiteDiamond: "",
+        },
+      });
+      setHazardousSymbols("");
+    } else {
+      setSelectedId(label.id);
+      setLabel(elem);
+      setHazardousSymbols(elem.symbols);
+    }
   }
   function showSymbol(symbol) {
     return (
@@ -20,7 +48,10 @@ function MiniLabel({ label }) {
     );
   }
   return (
-    <div className="minilabel-wrapper" onClick={() => selectLabel(label)}>
+    <div
+      className={styled ? "selectedminilabel-wrapper" : "minilabel-wrapper"}
+      onClick={() => selectLabel(label)}
+    >
       <div className="minilabel">
         <div className="minilabel-sheet">
           <div className="flex-center minipadding">
