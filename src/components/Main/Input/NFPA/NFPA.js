@@ -40,7 +40,7 @@ function NFPAinput() {
     return (
       <div className="color-diamond-wrapper">
         <img
-          src={require(`../../../../assets/symbols/${color}.svg`)}
+          src={require(`../../../../assets/NFPAsymbols/${color}.svg`)}
           alt={color}
         ></img>
         <Dropdown

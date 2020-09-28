@@ -36,7 +36,11 @@ function SymbolsInput() {
       <div className="chooseSymbol">
         <img
           className="previewSymbols"
-          src={require(`../../../../assets/symbols/${name}.jpg`)}
+          src={
+            hazardousSymbols.includes(name)
+              ? require(`../../../../assets/SelectedSymbols/${name}.svg`)
+              : require(`../../../../assets/symbols/${name}.svg`)
+          }
           alt={name}
           onClick={() => handleSymbols(name)}
         />

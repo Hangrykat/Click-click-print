@@ -7,7 +7,7 @@ function Label({ label }) {
     return (
       <div className="symbol">
         <img
-          src={require(`../../../../assets/symbols/${symbol}.jpg`)}
+          src={require(`../../../../assets/symbols/${symbol}.svg`)}
           alt="Symbol"
         />
       </div>
@@ -43,7 +43,7 @@ function Label({ label }) {
               <div className="diamond-wrapper">
                 <img
                   className="NFPA"
-                  src={require("../../../../assets/symbols/NFPA_704.svg")}
+                  src={require("../../../../assets/NFPAsymbols/NFPA_704.svg")}
                   alt="NFPA 704 symbol"
                 ></img>
                 {console.log(label.NFPA)}

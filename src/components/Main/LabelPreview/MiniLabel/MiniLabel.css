@@ -69,3 +69,16 @@
 .NFPAtitle {
   font-size: 4px;
 }
+
+.addLabel {
+  height: 200px;
+}
+.addlabel-wrapper {
+  background-color: #fff;
+  width: 7vw;
+  height: 10vh;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

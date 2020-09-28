@@ -11,6 +11,7 @@ import CustomButton from "../CustomUI/CustomButton";
 import { StateContext } from "../../../context";
 import Label from "./Label/Label";
 import MiniLabel from "./MiniLabel/Minilabel";
+import AddLabel from "./AddLabel/AddLabel";
 
 function LabelPreview() {
   const {
@@ -23,7 +24,9 @@ function LabelPreview() {
   } = useContext(StateContext);
 
   function saveHandler(label, labelsArray) {
-    if (label.id === "") {
+    if (labelsArray.length > 8) {
+      alert("Max saved items, Please delete some to create a new one");
+    } else if (label.id === "") {
       label.id = nextId();
       setLabelsArray([...labelsArray, label]);
       setLabel({
@@ -70,7 +73,6 @@ function LabelPreview() {
   }
   function previewSavedLabels(label) {
     if (label.id !== "") {
-      console.log(label);
       return <MiniLabel label={label} />;
     } else {
       return "";
@@ -97,6 +99,7 @@ function LabelPreview() {
             {labelsArray !== []
               ? labelsArray.map((elem) => previewSavedLabels(elem))
               : ""}
+            <AddLabel />
           </div>
           <div className="buttons-wrapper">
             <CustomButton endIcon={<ShareOutlinedIcon />} name="Share" />

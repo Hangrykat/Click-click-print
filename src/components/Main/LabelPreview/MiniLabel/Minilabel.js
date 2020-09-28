@@ -13,7 +13,7 @@ function MiniLabel({ label }) {
     return (
       <div className="minisymbol">
         <img
-          src={require(`../../../../assets/symbols/${symbol}.jpg`)}
+          src={require(`../../../../assets/symbols/${symbol}.svg`)}
           alt="Symbol"
         />
       </div>
@@ -46,7 +46,7 @@ function MiniLabel({ label }) {
             <div className="diamond-wrapper">
               <img
                 className="miniNFPA"
-                src={require("../../../../assets/symbols/NFPA_704.svg")}
+                src={require("../../../../assets/NFPAsymbols/NFPA_704.svg")}
                 alt="NFPA 704 symbol"
               ></img>
               <div className="redIndex">{label.NFPA.redIndex}</div>
