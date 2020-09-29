@@ -43,42 +43,51 @@ function NFPAinput() {
           src={require(`../../../../assets/NFPAsymbols/${color}.svg`)}
           alt={color}
         ></img>
-        <Dropdown
-          options={index}
-          placeholder={placeholder}
-          onChange={(e) =>
-            setLabel({
-              ...label,
-              NFPA: {
-                ...label.NFPA,
-                [color]: e.value.slice(0, e.value.indexOf("-")),
-              },
-            })
-          }
-          value={""}
-        />
+        <div className="dropdown">
+          <Dropdown
+            options={index}
+            placeholder={placeholder}
+            onChange={(e) =>
+              setLabel({
+                ...label,
+                NFPA: {
+                  ...label.NFPA,
+                  [color]: e.value.slice(0, e.value.indexOf("-")),
+                },
+              })
+            }
+            value={""}
+          />
+        </div>
         {console.log(label)}
       </div>
     );
   }
   return (
     <div className="NFPA-Diamond-input">
-      {OneColorDiamondWrapper(
-        "redDiamond",
-        flammabilityIndex,
-        "Flammability Index"
-      )}
-      {OneColorDiamondWrapper(
-        "blueDiamond",
-        healthHazardIndex,
-        "Health Hazard"
-      )}
-      {OneColorDiamondWrapper(
-        "yellowDiamond",
-        instabilityIndex,
-        "Inestability Index"
-      )}
-      {OneColorDiamondWrapper("whiteDiamond", specialNotice, "Specific Hazard")}
+      <div className="flex-center flex-start">
+        {OneColorDiamondWrapper(
+          "redDiamond",
+          flammabilityIndex,
+          "Flammability Index"
+        )}
+        {OneColorDiamondWrapper(
+          "blueDiamond",
+          healthHazardIndex,
+          "Health Hazard"
+        )}
+      </div>
+      <div className="flex-center flex-start">
+        {OneColorDiamondWrapper(
+          "yellowDiamond",
+          instabilityIndex,
+          "Inestability Index"
+        )}
+        {OneColorDiamondWrapper(
+          "whiteDiamond",
+          specialNotice,
+          "Specific Hazard")}
+      </div>
     </div>
   );
 }

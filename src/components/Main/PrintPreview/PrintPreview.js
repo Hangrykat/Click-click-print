@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./PrintPreview.css";
 import { StateContext } from "../../../context";
-import CustomButton from "../CustomUI/CustomButton"
+import BackspaceRoundedIcon from '@material-ui/icons/BackspaceRounded';
 
 import DragDrop from "./DragDrop/DragDrop"
 import { DndProvider } from "react-dnd";
@@ -23,17 +23,11 @@ function PrintPreview() {
         <div id="modal-wrap"></div>
       )}
       <div className="modal-window">
-        <button className="close-button" onClick={() => setShowModalPreview(false)}>Back</button>
+        <div className="close-button" onClick={() => setShowModalPreview(false)}><BackspaceRoundedIcon/></div>
         <div className="modal-content flex-center">
           <DndProvider backend={HTML5Backend}>
             <DragDrop/>
-          </DndProvider>
-          <div className="print-button">
-            <CustomButton name="Print" onClick={() => {
-                  window.print();
-                }}
-            />
-          </div>          
+          </DndProvider>         
         </div>
       </div>
     </div>
