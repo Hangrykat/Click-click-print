@@ -2,6 +2,10 @@ import React, { useContext } from "react";
 import { StateContext } from "../../../../context";
 import "./MiniLabel.css";
 import { Textfit } from "react-textfit";
+import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
+import IconButton from "@material-ui/core/IconButton";
+import { confirmAlert } from "react-confirm-alert"; // Import
+import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 function MiniLabel({ label, styled }) {
   const {
@@ -9,6 +13,8 @@ function MiniLabel({ label, styled }) {
     setHazardousSymbols,
     setSelectedId,
     selectedId,
+    labelsArray,
+    setLabelsArray,
   } = useContext(StateContext);
   function selectLabel(elem) {
     if (label.id === selectedId) {
@@ -37,6 +43,26 @@ function MiniLabel({ label, styled }) {
       setHazardousSymbols(elem.symbols);
     }
   }
+  function deleteLabel(label) {
+    setLabelsArray([...labelsArray.filter((elem) => elem.id !== label.id)]);
+    setLabel({
+      id: "",
+      productName: "",
+      chemicalFormula: "",
+      description: "",
+      owner: "",
+      contactInfo: "",
+      date: "",
+      eDate: "",
+      symbols: [],
+      NFPA: {
+        redDiamond: "",
+        blueDiamond: "",
+        yellowDiamond: "",
+        whiteDiamond: "",
+      },
+    });
+  }
   function showSymbol(symbol) {
     return (
       <div className="minisymbol">
@@ -47,11 +73,41 @@ function MiniLabel({ label, styled }) {
       </div>
     );
   }
+
+  function submit(label) {
+    confirmAlert({
+      title: "Confirm to submit",
+      message: "Are you sure to do this.",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => deleteLabel(label),
+        },
+        {
+          label: "No",
+        },
+      ],
+    });
+  }
+
   return (
-    <div
-      className={styled ? "selectedminilabel-wrapper" : "minilabel-wrapper"}
-      onClick={() => selectLabel(label)}
-    >
+    <div className={styled ? "selectedminilabel-wrapper" : "minilabel-wrapper"}>
+      <div className="minilabelOverlay">
+        <div className="iconWrapper">
+          <img
+            className="editMe"
+            src={require(`../../../../assets/extras/pencil.svg`)}
+            onClick={() => selectLabel(label)}
+          ></img>
+        </div>
+        <div className="iconWrapper">
+          <img
+            className="deleteMe"
+            src={require(`../../../../assets/extras/trash.svg`)}
+            onClick={() => submit(label)}
+          ></img>
+        </div>
+      </div>
       <div className="minilabel">
         <div className="minilabel-sheet">
           <div className="flex-center minipadding">

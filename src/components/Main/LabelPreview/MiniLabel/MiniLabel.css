@@ -2,12 +2,62 @@
   width: 8vw;
   height: 11vh;
   border-radius: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .selectedminilabel-wrapper {
   background-color: black;
   width: 8vw;
   height: 11vh;
   border-radius: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.minilabelOverlay {
+  opacity: 0;
+  height: 92%;
+  width: 92%;
+  position: absolute;
+  z-index: 10;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.minilabelOverlay:hover {
+  transition: 0.2s;
+  opacity: 1;
+  background-color: rgba(73, 73, 73, 0.8);
+}
+
+.editMe {
+  opacity: inherit;
+  height: 32px;
+}
+
+.deleteMe {
+  opacity: inherit;
+  height: 32px;
+}
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
+}
+
+.iconWrapper:active {
+  background-color: #b6b6b6;
+  box-shadow: 0 5px #666;
+  transform: translateY(1px);
 }
 
 .minilabel-text {
@@ -27,9 +77,11 @@
 .minilabel {
   display: flex;
   height: 92%;
+  width: 92%;
   background-color: white;
   margin: 3px;
   border-radius: 5px;
+  position: absolute;
 }
 
 .minilabel-sheet {
