@@ -3,9 +3,7 @@ import "./LabelPreview.css";
 import "../../../shared-styles.css";
 import nextId from "react-id-generator";
 import SaveOutlinedIcon from "@material-ui/icons/SaveAltOutlined";
-
 import PrintOutlinedIcon from "@material-ui/icons/PrintOutlined";
-import ShareOutlinedIcon from "@material-ui/icons/ShareOutlined";
 
 import CustomButton from "../CustomUI/CustomButton";
 import { StateContext } from "../../../context";
@@ -102,7 +100,6 @@ function LabelPreview() {
             <AddLabel />
           </div>
           <div className="buttons-wrapper">
-            <CustomButton endIcon={<ShareOutlinedIcon />} name="Share" />
             <CustomButton
               endIcon={<PrintOutlinedIcon />}
               name="Preview"

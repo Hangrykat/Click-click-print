@@ -19,11 +19,13 @@ function Input() {
               <div className="input-field">
                 <TextInput />
                 <div className="single-line-input">
+                  <p>NFPA 704 Diamond</p>
+                </div>
+                <NFPA />
+                <div className="single-line-input">
                   <p>Choose symbols:</p>
                 </div>
-                <SymbolsInput />
-                <div>NFPA 704 Diamond</div>
-                <NFPA />
+                <SymbolsInput />                
               </div>
             </div>
           </div>

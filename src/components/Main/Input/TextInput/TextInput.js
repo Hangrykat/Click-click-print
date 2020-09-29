@@ -7,7 +7,6 @@ function TextInput() {
   const { setLabel, label } = useContext(StateContext);
   return (
     <div className="input-panel">
-      <div className="title-mid">About Product</div>
       <div className="input-field-wrapper">
         <CustomTextInput
           name="product"
@@ -27,22 +26,28 @@ function TextInput() {
           name="description"
           label="Description"
           line="multiline"
-          rows="3"
+          rows="2"
           onChange={(e) => setLabel({ ...label, description: e.target.value })}
           value={label.description}
         />
-        <CustomTextInput
-          name="owner"
-          label="Name/ID number"
-          onChange={(e) => setLabel({ ...label, owner: e.target.value })}
-          value={label.owner}
-        />
-        <CustomTextInput
-          name="contactInfo"
-          label="Contact info"
-          onChange={(e) => setLabel({ ...label, contactInfo: e.target.value })}
-          value={label.contactInfo}
-        />
+        <div className="flex-wrapper">
+          <div className="flex-grow">
+            <CustomTextInput
+              name="owner"
+              label="Name/ID number"
+              onChange={(e) => setLabel({ ...label, owner: e.target.value })}
+              value={label.owner}
+            />
+          </div>
+          <div className="flex-grow">
+            <CustomTextInput
+              name="contactInfo"
+              label="Contact info"
+              onChange={(e) => setLabel({ ...label, contactInfo: e.target.value })}
+              value={label.contactInfo}
+            />
+          </div>
+        </div>
         <div className="flex-wrapper">
           <div className="flex-grow">
             <CustomDateInput

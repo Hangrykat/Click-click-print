@@ -1,45 +1,101 @@
+.drag-drop-panel {
+    background: #F8F8F8;
+    margin: 0 30px;
+    border-radius: 4px;
+    height: 100%;
+}
+
+.labels-to-print {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    height: 82%;
+    padding: 20px;
+    margin: 10px 30px;
+}
 
 .label-to-print {
     display: flex;
-    margin: 5px;
-    width: 250px;
-    height: 100px;
-    min-width: 100px;
-    border: 1px solid black;
+    margin: 2px;
+    width: 200px;
+    height: 140px;
+    border: 1px solid #303030;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
 
 .slot {
-    display: "flex";
-    margin: 5px;
-    width: 250px;
-    min-width: 100px;
-    height: 100px;
-    border: 1px dashed black;
+    display: flex;
+    margin: 2px;
+    width: 200px;
+    height: 140px;
+    border: 0.5px dashed #303030;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+    position: relative;
 }
 
 .slots {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid black;
-    margin: 5px;
-    width: 80%;
+    width: 90%;
+    height: 82%;
+    padding: 20px;
+    margin: 10px 20px;
+}
+
+.print-button {
+    margin: 10px 20px;
+}
+
+.delete-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.delete-icon img {
+    height: 20px;
+    width: 20px;
 }
 
 @media print {
     @page {
         size: A4;
-        margin: 0px;
-        content: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        border: transparent !important;
+    }
+
+    .drag-drop-panel {
+        background: none;
+        margin: 0;
     }
 
     .slots {
         border: transparent;
+        margin: 0px;
+        padding: 0;
+    }
+
+    .slot {
+        width: 103mm;
+        height: 73mm;
+        margin: 0;
+        border: transparent;
+    }
+
+    .label-to-print {
+        width: 103mm;
+        margin: 0;
+        height: 73mm;
+    }
+
+    .labels-to-print {
+        display: none;
     }
 
     .delete-button {
@@ -56,5 +112,30 @@
 
     .labels-to-print .label-to-print{
         display: none;
+    }
+
+    .title-big {
+        display: none;
+    }
+
+    .label-text {
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 1600px) and (max-height: 900px){
+    .drag-drop-panel {
+        height: 75vh;
+    }
+
+    .slot {
+        width: 180px;
+        height: 100px;
+    }
+
+    .label-to-print {
+        width: 180px;
+        height: 100px;
     }
 }

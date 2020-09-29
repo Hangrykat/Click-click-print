@@ -12,6 +12,7 @@
   background: #add2c9;
   width: 100%;
   padding: 20px;
+  margin: 0 20px;
   border-radius: 5px;
 }
 
@@ -27,28 +28,32 @@
 
 .input-panel {
   width: 97%;
-  margin: 10px;
+  margin: 5px 10px;
   background: #faf9f9;
 }
 
 .input-field-wrapper {
   display: block;
-  padding: 10px;
+  padding: 5px;
 }
 
 .single-line-input {
   display: flex;
   align-items: center;
+  margin: 5px 5px;
 }
 
 .choose-symbols-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
+
 .chooseSymbol {
-  height: 4vw;
+  height: 3.5vw;
   min-height: 50px;
 }
+
 .previewSymbols {
   height: 100%;
 }
@@ -56,4 +61,40 @@
 .color-diamond-wrapper {
   display: flex;
   align-items: center;
+  margin: 5px;
+}
+
+.color-diamond-wrapper img {
+  height: 50px;
+  width: 50px;
+  margin: 0px 5px;
+}
+
+.dropdown {
+  width: 14vw;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 1600px) and (max-height: 900px) {
+  .color-diamond-wrapper {
+    margin: 2px;
+  }
+  
+  .color-diamond-wrapper img {
+    height: 35px;
+    width: 35px;
+    margin: 0px;
+  }
+
+  .dropdown {
+    width: 16vw;
+  }
+  
+  .chooseSymbol img {
+    height: 5vh;
+    width: 3.5vw;
+  }
 }
