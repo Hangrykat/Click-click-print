@@ -1,6 +1,6 @@
 .preview-panel {
   height: 50%;
-  background: #A9A9A9;
+  background: #a9a9a9;
   margin: 10px;
   display: flex;
   justify-content: center;
@@ -9,8 +9,8 @@
 
 .label-wrapper {
   background-color: #fff;
-  width: 30vw;
-  height: 30vh;
+  width: 40vh;
+  height: 28vh;
   border-radius: 5px;
 }
 
@@ -33,7 +33,7 @@
   width: 97%;
   height: 20%;
   margin: 10px;
-  background-color: #A9A9A9;
+  background-color: #a9a9a9;
 }
 
 .small-label {
@@ -63,7 +63,7 @@
   justify-content: flex-end;
 }
 
-@media screen and (max-width: 1600px) and (max-height: 900px){
+@media screen and (max-width: 1600px) and (max-height: 900px) {
   .preview-panel {
     height: 45%;
   }
