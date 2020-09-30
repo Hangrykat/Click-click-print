@@ -88,7 +88,7 @@ function LabelPreview() {
           <div className="preview-panel">
             <Label label={label} />
           </div>
-          <div className="save-button-wrapper">
+          <div className="buttons-wrapper">
             <CustomButton
               endIcon={<SaveOutlinedIcon />}
               name="Save"
