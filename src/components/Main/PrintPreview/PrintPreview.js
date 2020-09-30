@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./PrintPreview.css";
 import { StateContext } from "../../../context";
-import BackspaceRoundedIcon from '@material-ui/icons/BackspaceRounded';
+import CloseIcon from '@material-ui/icons/Close';
 
 import DragDrop from "./DragDrop/DragDrop"
 import { DndProvider } from "react-dnd";
@@ -23,7 +23,7 @@ function PrintPreview() {
         <div id="modal-wrap"></div>
       )}
       <div className="modal-window">
-        <div className="close-button" onClick={() => setShowModalPreview(false)}><BackspaceRoundedIcon/></div>
+        <div className="close-button" onClick={() => setShowModalPreview(false)}><CloseIcon/></div>
         <div className="modal-content flex-center">
           <DndProvider backend={HTML5Backend}>
             <DragDrop/>

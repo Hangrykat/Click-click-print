@@ -1,10 +1,12 @@
-import React, { useState, useCallback, useRef } from "react";
+import React, { useState, useCallback, useRef, useContext } from "react";
 import { useDrag, useDrop } from "react-dnd";
-import CustomButton from "../../CustomUI/CustomButton";
-import CancelIcon from "@material-ui/icons/Cancel";
+import { StateContext } from "../../../../context";
 
 import "./DragDrop.css";
 import { PrintOutlined } from "@material-ui/icons";
+import CustomButton from "../../CustomUI/CustomButton";
+import CancelIcon from "@material-ui/icons/Cancel";
+import Label from "../../LabelPreview/Label/Label";
 
 const labelList = [
   { id: 1, title: "Neo", url: "burnable.jpg" },
@@ -17,44 +19,9 @@ const labelList = [
   { id: 8, title: "Jakub", url: "burnable.jpg" },
 ];
 
-const classes = {
-  //labels: {
-  //display: "flex",
-  //flexDirection: "column",
-  //width: "10%"
-  //},
-  label: {
-    display: "flex",
-    margin: "5px",
-    width: "250px",
-    height: "100px",
-    minWidth: "100px",
-    border: "1px solid black",
-    alignItems: "center",
-    justifyContent: "center",
-    cursor: "pointer",
-  },
-  slots: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    border: "1px solid black",
-    margin: "5px",
-    width: "80%",
-  },
-  slot: {
-    display: "flex",
-    margin: "5px",
-    width: "250px",
-    minWidth: "100px",
-    height: "100px",
-    border: "1px dashed black",
-    alignItems: "center",
-    justifyContent: "center",
-    cursor: "pointer",
-  },
-};
-
 const DragDrop = () => {
+  const { label, labelsArray } = useContext(StateContext);
+
   const [mySlots, setSlots] = useState([]);
 
   const putLabelInSlot = useCallback(
@@ -83,6 +50,7 @@ const DragDrop = () => {
             <div className="title-big teal-bg">Saved Labels</div>
             <div className="label-text">Drag the label(s) to print grid </div>
             <div className="labels-to-print">
+              {/*
               {labelList.map((label) => (
                 <Label
                   id={label.id}
@@ -91,6 +59,15 @@ const DragDrop = () => {
                   url={label.url}
                   draggable={true}
                 ></Label>
+              ))}
+               */}
+
+              {labelsArray.map((label) => (
+                <PrintLabel
+                  id={label.id}
+                  label={label}
+                  draggable={true}
+                ></PrintLabel>
               ))}
             </div>
           </div>
@@ -109,16 +86,15 @@ const DragDrop = () => {
                     changeTaskStatus={putLabelInSlot}
                     clearslot={deleteSelectedLabel}
                   >
-                    {labelList
+                    {labelsArray
                       .filter((a) => a.id === mySlots[i])
                       .map((label) => (
-                        <Label
+                        <PrintLabel
                           id={label.id}
                           key={label.id}
-                          title={label.title}
-                          url={label.url}
+                          label={label}
                           draggable={false}
-                        ></Label>
+                        ></PrintLabel>
                       ))}
                   </Slot>
                 </div>
@@ -143,7 +119,7 @@ const DragDrop = () => {
 export default DragDrop;
 
 // Saved labels imported from context
-const Label = ({ id, title, draggable }) => {
+const PrintLabel = ({ id, label, draggable }) => {
   const ref = useRef(null);
   const [{ isDragging }, drag] = useDrag({
     item: { type: "card", id },
@@ -156,7 +132,7 @@ const Label = ({ id, title, draggable }) => {
 
   return (
     <div ref={ref} className="label-to-print">
-      {title}
+      <Label label={label} />
     </div>
   );
 };
