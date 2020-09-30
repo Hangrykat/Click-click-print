@@ -3,6 +3,7 @@
     margin: 0 30px;
     border-radius: 4px;
     height: 100%;
+    margin: 0 40px;
 }
 
 .labels-to-print {
@@ -10,8 +11,8 @@
     grid-template-columns: 1fr 1fr;
     width: 90%;
     height: 82%;
-    padding: 20px;
-    margin: 10px 30px;
+    padding: 10px;
+    margin: 10px 10px;
 }
 
 .label-to-print {
@@ -41,12 +42,12 @@
     grid-template-columns: 1fr 1fr;
     width: 90%;
     height: 82%;
-    padding: 20px;
-    margin: 10px 20px;
+    padding: 10px;
+    margin: 10px 10px;
 }
 
 .print-button {
-    margin: 10px 20px;
+    margin: 10px 30px;
 }
 
 .delete-button {
@@ -58,6 +59,29 @@
 .delete-icon img {
     height: 20px;
     width: 20px;
+}
+
+/*labels saved*/
+.label-to-print .label-wrapper .label .label-sheet .flex-center .title-blackBG{
+    font-size: 10px;
+}
+
+
+
+@media screen and (max-width: 1600px) and (max-height: 900px){
+    .drag-drop-panel {
+        height: 75vh;
+    }
+
+    .slot {
+        width: 150px;
+        height: 105px;
+    }
+
+    .label-to-print {
+        width: 150px;
+        height: 105px;
+    }
 }
 
 @media print {
@@ -122,20 +146,4 @@
         display: none;
     }
     
-}
-
-@media screen and (max-width: 1600px) and (max-height: 900px){
-    .drag-drop-panel {
-        height: 75vh;
-    }
-
-    .slot {
-        width: 180px;
-        height: 100px;
-    }
-
-    .label-to-print {
-        width: 180px;
-        height: 100px;
-    }
 }

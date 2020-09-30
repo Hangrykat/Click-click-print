@@ -14,7 +14,6 @@ function Label({ label }) {
     );
   }
   return (
-    <div className="preview-panel">
       <div className="label-wrapper">
         <div className="label">
           <div className="label-sheet">
@@ -56,7 +55,6 @@ function Label({ label }) {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 
