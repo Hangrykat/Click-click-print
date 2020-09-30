@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 import { StateContext } from "../../../../context";
 import "./MiniLabel.css";
 import { Textfit } from "react-textfit";
-import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
-import IconButton from "@material-ui/core/IconButton";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
@@ -18,7 +16,7 @@ function MiniLabel({ label, styled }) {
   } = useContext(StateContext);
   function selectLabel(elem) {
     if (label.id === selectedId) {
-      setSelectedId("");
+      setSelectedId(null);
       setLabel({
         id: "",
         productName: "",

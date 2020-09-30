@@ -1,0 +1,28 @@
+.addLabel {
+  height: 60%;
+}
+.addlabel-wrapper {
+  background-color: #fff;
+  width: 7vw;
+  height: 10vh;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addEnvelop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  width: 0%;
+  border-radius: 50%;
+}
+
+.addLabel:hover {
+  transition: 0.1s;
+  height: 65%;
+}
+.addLabel:active {
+  transform: translateY(4px);
+}

@@ -2,7 +2,6 @@ import React from "react";
 import "./Label.css";
 
 function Label({ label }) {
-  console.log(label.NFPA);
   function showSymbol(symbol) {
     return (
       <div className="symbol">
@@ -46,7 +45,6 @@ function Label({ label }) {
                   src={require("../../../../assets/NFPAsymbols/NFPA_704.svg")}
                   alt="NFPA 704 symbol"
                 ></img>
-                {console.log(label.NFPA)}
                 <div className="redIndex">{label.NFPA.redDiamond}</div>
                 <div className="blueIndex">{label.NFPA.blueDiamond}</div>
                 <div className="yellowIndex">{label.NFPA.yellowDiamond}</div>

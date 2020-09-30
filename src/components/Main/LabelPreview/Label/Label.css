@@ -1,5 +1,9 @@
-.NFPA {
-  height: 8vw;
+.warning-diamond {
+  height: 40%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .diamond-wrapper {
@@ -8,11 +12,16 @@
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  height: fit-content;
   width: fit-content;
+  font-size: 1vw;
 }
 
 .NFPA {
+  height: 5vw;
   grid-area: 1 / 1 / 5 / 5;
+  justify-self: center;
+  align-self: center;
 }
 .redIndex {
   grid-area: 1 / 2 / 3 / 4;

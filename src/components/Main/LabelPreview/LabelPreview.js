@@ -27,7 +27,7 @@ function LabelPreview() {
       alert("Max saved items, Please delete some to create a new one");
     } else if (label.id === "") {
       label.id = nextId();
-      setLabelsArray([...labelsArray, label]);
+      setLabelsArray([...labelsArray.filter((elem) => elem.id !== ""), label]);
       setLabel({
         id: "",
         productName: "",
@@ -73,7 +73,7 @@ function LabelPreview() {
   function previewSavedLabels(label) {
     if (label.id === selectedId) {
       return <MiniLabel label={label} styled={true} />;
-    } else if (label.id !== "") {
+    } else if (label.id !== selectedId) {
       return <MiniLabel label={label} styled={false} />;
     } else {
       return "";

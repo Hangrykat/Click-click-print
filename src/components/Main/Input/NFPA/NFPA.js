@@ -59,7 +59,6 @@ function NFPAinput() {
             value={""}
           />
         </div>
-        {console.log(label)}
       </div>
     );
   }
@@ -86,7 +85,8 @@ function NFPAinput() {
         {OneColorDiamondWrapper(
           "whiteDiamond",
           specialNotice,
-          "Specific Hazard")}
+          "Specific Hazard"
+        )}
       </div>
     </div>
   );
