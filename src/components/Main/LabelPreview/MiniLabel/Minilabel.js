@@ -74,15 +74,15 @@ function MiniLabel({ label, styled }) {
 
   function submit(label) {
     confirmAlert({
-      title: "Confirm to submit",
-      message: "Are you sure to do this.",
+      title: "Confirm to delete",
+      message: "Are you sure to delete the label?",
       buttons: [
         {
-          label: "Yes",
+          label: "Yes, is horrible",
           onClick: () => deleteLabel(label),
         },
         {
-          label: "No",
+          label: "No, but I want my money back",
         },
       ],
     });

@@ -4,6 +4,7 @@ import "../../../shared-styles.css";
 import nextId from "react-id-generator";
 import SaveOutlinedIcon from "@material-ui/icons/SaveAltOutlined";
 import PrintOutlinedIcon from "@material-ui/icons/PrintOutlined";
+import { confirmAlert } from "react-confirm-alert"; // Import
 
 import CustomButton from "../CustomUI/CustomButton";
 import { StateContext } from "../../../context";
@@ -21,53 +22,76 @@ function LabelPreview() {
     setHazardousSymbols,
     selectedId,
   } = useContext(StateContext);
-
+  const emptylabel = {
+    id: "",
+    productName: "",
+    chemicalFormula: "",
+    description: "",
+    owner: "",
+    contactInfo: "",
+    date: "",
+    eDate: "",
+    symbols: [],
+    NFPA: {
+      redDiamond: "",
+      blueDiamond: "",
+      yellowDiamond: "",
+      whiteDiamond: "",
+    },
+  };
+  function emptyLabel() {
+    confirmAlert({
+      title: "Empty Label",
+      message: "The Label is completly Empty. Please fill some inputs",
+      buttons: [
+        {
+          label: "okkk......",
+        },
+        {
+          label: "I am too lazy",
+        },
+      ],
+    });
+  }
   function saveHandler(label, labelsArray) {
-    if (labelsArray.length > 8) {
-      alert("Max saved items, Please delete some to create a new one");
-    } else if (label.id === "") {
-      label.id = nextId();
-      setLabelsArray([...labelsArray.filter((elem) => elem.id !== ""), label]);
-      setLabel({
-        id: "",
-        productName: "",
-        chemicalFormula: "",
-        description: "",
-        owner: "",
-        contactInfo: "",
-        date: "",
-        eDate: "",
-        symbols: [],
-        NFPA: {
-          redDiamond: "",
-          blueDiamond: "",
-          yellowDiamond: "",
-          whiteDiamond: "",
-        },
-      });
-      setHazardousSymbols([]);
+    let checkNonEmptyObject = false;
+    if (
+      label.id !== "" ||
+      label.productName !== "" ||
+      label.chemicalFormula !== "" ||
+      label.description !== "" ||
+      label.owner !== "" ||
+      label.contactInfo !== "" ||
+      label.date !== "" ||
+      label.eDate !== "" ||
+      label.symbols.length !== 0 ||
+      label.NFPA.redDiamond !== "" ||
+      label.NFPA.blueDiamond !== "" ||
+      label.NFPA.yellowDiamond !== "" ||
+      label.NFPA.whiteDiamond !== ""
+    ) {
+      checkNonEmptyObject = true;
+    }
+    if (checkNonEmptyObject === true) {
+      if (labelsArray.length > 8) {
+        alert("Max saved items, Please delete some to create a new one");
+      } else if (label.id === "") {
+        label.id = nextId();
+        setLabelsArray([
+          ...labelsArray.filter((elem) => elem.id !== ""),
+          label,
+        ]);
+        setLabel(emptylabel);
+        setHazardousSymbols([]);
+      } else {
+        setLabelsArray([
+          ...labelsArray.filter((elem) => elem.id !== label.id),
+          label,
+        ]);
+        setLabel(emptylabel);
+      }
     } else {
-      setLabelsArray([
-        ...labelsArray.filter((elem) => elem.id !== label.id),
-        label,
-      ]);
-      setLabel({
-        id: "",
-        productName: "",
-        chemicalFormula: "",
-        description: "",
-        owner: "",
-        contactInfo: "",
-        date: "",
-        eDate: "",
-        symbols: [],
-        NFPA: {
-          redDiamond: "",
-          blueDiamond: "",
-          yellowDiamond: "",
-          whiteDiamond: "",
-        },
-      });
+      emptyLabel();
     }
   }
   function previewSavedLabels(label) {
