@@ -39,6 +39,27 @@ function LabelPreview() {
       whiteDiamond: "",
     },
   };
+
+  function previewHandler() {
+    if (labelsArray.length === 0) {
+      confirmAlert({
+        title: "No labels detected",
+        message:
+          "The program didn't detect any Label to print, please create one to process to the print",
+        buttons: [
+          {
+            label: "ok",
+          },
+          {
+            label: "OhMayGosh!",
+          },
+        ],
+      });
+    } else {
+      setShowModalPreview(true);
+    }
+  }
+
   function emptyLabel() {
     confirmAlert({
       title: "Empty Label",
@@ -124,14 +145,14 @@ function LabelPreview() {
             {labelsArray !== []
               ? labelsArray.map((elem) => previewSavedLabels(elem))
               : ""}
-            <AddLabel />
+            {labelsArray.length !== 0 ? <AddLabel /> : ""}
           </div>
           <div className="buttons-wrapper">
             <CustomButton
               endIcon={<PrintOutlinedIcon />}
               name="Preview"
               onClick={() => {
-                setShowModalPreview(true);
+                previewHandler();
               }}
             />
           </div>

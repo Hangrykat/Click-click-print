@@ -9,6 +9,7 @@ function AddLabel() {
     label,
     labelsArray,
     setSelectedId,
+    refInput,
   } = useContext(StateContext);
   function addLabelhandle() {
     const emptylabel = labelsArray.find(({ id }) => id === "");
@@ -52,6 +53,7 @@ function AddLabel() {
       setLabelsArray([...labelsArray, label]);
       setSelectedId("");
     }
+    refInput.current.focus();
   }
 
   return (

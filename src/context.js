@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useRef, useState } from "react";
 
 export const StateContext = createContext({});
 
@@ -24,6 +24,7 @@ const ContextProvider = ({ children }) => {
   });
   const [labelsArray, setLabelsArray] = useState([]);
   const [selectedId, setSelectedId] = useState();
+  let refInput = useRef(null);
 
   return (
     <StateContext.Provider
@@ -38,6 +39,7 @@ const ContextProvider = ({ children }) => {
         setLabelsArray,
         selectedId,
         setSelectedId,
+        refInput,
       }}
     >
       {children}

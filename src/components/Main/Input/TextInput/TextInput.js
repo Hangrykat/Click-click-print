@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import CustomDateInput from "../../CustomUI/CustomDateInput";
 import CustomTextInput from "../../CustomUI/CustomTextInput";
 import { StateContext } from "../../../../context";
 
 function TextInput() {
-  const { setLabel, label } = useContext(StateContext);
+  const { setLabel, label, refInput } = useContext(StateContext);
   return (
     <div className="input-panel">
       <div className="input-field-wrapper">
@@ -39,12 +39,15 @@ function TextInput() {
             <CustomTextInput
               name="contactInfo"
               label="Contact info"
-              onChange={(e) => setLabel({ ...label, contactInfo: e.target.value })}
+              onChange={(e) =>
+                setLabel({ ...label, contactInfo: e.target.value })
+              }
               value={label.contactInfo}
             />
           </div>
         </div>
         <CustomTextInput
+          inputRef={refInput}
           name="product"
           label="Product name"
           onChange={(e) => setLabel({ ...label, productName: e.target.value })}
