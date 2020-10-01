@@ -8,24 +8,21 @@ function TextInput() {
   return (
     <div className="input-panel">
       <div className="input-field-wrapper">
-        <div className="flex-wrapper">
-          <div className="flex-grow">
-            <CustomDateInput
-              name="date"
-              label="Date"
-              onChange={(e) => setLabel({ ...label, date: e.target.value })}
-              value={label.date}
-            />
-          </div>
-          <div className="flex-grow">
-            <CustomDateInput
-              name="eDate"
-              label="Possible expiry date"
-              onChange={(e) => setLabel({ ...label, eDate: e.target.value })}
-              value={label.eDate}
-            />
-          </div>
-        </div>
+        <CustomTextInput
+          name="product"
+          label="Product name"
+          onChange={(e) => setLabel({ ...label, productName: e.target.value })}
+          value={label.productName}
+        />
+        <CustomTextInput
+          name="formula"
+          label="Chemical formula"
+          onChange={(e) =>
+            setLabel({ ...label, chemicalFormula: e.target.value })
+          }
+          value={label.chemicalFormula}
+        />
+        
         <div className="flex-wrapper">
           <div className="flex-grow">
             <CustomTextInput
@@ -45,27 +42,32 @@ function TextInput() {
           </div>
         </div>
         <CustomTextInput
-          name="product"
-          label="Product name"
-          onChange={(e) => setLabel({ ...label, productName: e.target.value })}
-          value={label.productName}
-        />
-        <CustomTextInput
-          name="formula"
-          label="Chemical formula"
-          onChange={(e) =>
-            setLabel({ ...label, chemicalFormula: e.target.value })
-          }
-          value={label.chemicalFormula}
-        />
-        <CustomTextInput
           name="description"
           label="Description"
           line="multiline"
           rows="2"
+          inputProps={{ maxLength : 70 }}
           onChange={(e) => setLabel({ ...label, description: e.target.value })}
           value={label.description}
-        />
+        />      
+        <div className="flex-wrapper">
+          <div className="flex-grow">
+            <CustomDateInput
+              name="date"
+              label="Date"
+              onChange={(e) => setLabel({ ...label, date: e.target.value })}
+              value={label.date}
+            />
+          </div>
+          <div className="flex-grow">
+            <CustomDateInput
+              name="eDate"
+              label="Possible expiry date"
+              onChange={(e) => setLabel({ ...label, eDate: e.target.value })}
+              value={label.eDate}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

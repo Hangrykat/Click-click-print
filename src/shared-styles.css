@@ -27,6 +27,11 @@
   justify-content: flex-end;
 }
 
+.word-wrap {
+  word-wrap: break-word;
+  width: 160px; 
+}
+
 .title-big {
   padding: 10px;
   font-size: 1.1vw;
@@ -51,8 +56,7 @@
 
 .label-text {
   font-size: 0.7vw;
-  padding: 5px;
-  text-overflow: inherit;
+  padding: 3px;
 }
 
 .title-blackBG {
@@ -133,7 +137,7 @@
     width: 75%;
     height: 95%;
     left: 50%;
-    top: -50%;
+    top: -200%;
     transform: translate(-50%, -50%);
     z-index: 9000;
     background-color: #fff;
