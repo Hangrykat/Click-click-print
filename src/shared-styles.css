@@ -52,6 +52,7 @@
 .label-text {
   font-size: 0.7vw;
   padding: 5px;
+  text-overflow: inherit;
 }
 
 .title-blackBG {
@@ -62,6 +63,7 @@
   text-align: center;
   margin: 10px;
   padding: 5px;
+  -webkit-print-color-adjust: exact;
 }
 
 .single-line-input p {
@@ -153,13 +155,3 @@
   }
 }
 
-
-@media print { 
-  .modal-window {
-    border: none;
-    padding: 0;
-    height: 100%;
-    margin: 0;
-  }
-
-}

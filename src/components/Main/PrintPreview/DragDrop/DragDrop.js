@@ -3,6 +3,7 @@ import { useDrag, useDrop } from "react-dnd";
 import { StateContext } from "../../../../context";
 
 import "./DragDrop.css";
+import "../../../../shared-styles.css"
 import CancelIcon from "@material-ui/icons/Cancel";
 import Label from "../../LabelPreview/Label/Label";
 

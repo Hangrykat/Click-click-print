@@ -28,7 +28,7 @@ function Label({ label }) {
                     <div className="label-text">Date:</div>
                     <div className="label-text">Expiry Date:</div>
                     <div className="label-text">Description:</div>
-                    <div className="label-text">Name/ID No:</div>
+                    <div className="label-text">Name/ID:</div>
                     <div className="label-text">Contact:</div>
                   </div>
                   <div className="answer">
