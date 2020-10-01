@@ -37,8 +37,35 @@
   justify-self: center;
   align-self: center;
 }
+
 .yellowIndex {
   grid-area: 2 / 3 / 4 / 5;
   justify-self: center;
   align-self: center;
 }
+
+.description-container {
+  display: grid;
+  grid-template-columns: 32% 68%;
+  grid-template-rows: 15% 15% 40% 15% 15%;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border: 0.5px solid #303030;
+  width: 70%;
+  height: 140px;
+  padding: 3px;
+  margin: 0 0 0 10px;
+  font-size: 0.7vw;
+  padding: 3px;
+}
+
+.grid1 { grid-area: 1 / 1 / 2 / 2; }
+.grid2 { grid-area: 2 / 1 / 3 / 2; }
+.grid3 { grid-area: 3 / 1 / 4 / 2; }
+.grid4 { grid-area: 4 / 1 / 5 / 2; }
+.grid5 { grid-area: 5 / 1 / 6 / 2; }
+.grid6 { grid-area: 1 / 2 / 2 / 3; }
+.grid7 { grid-area: 2 / 2 / 3 / 3; }
+.grid8 { grid-area: 3 / 2 / 4 / 3; }
+.grid9 { grid-area: 4 / 2 / 5 / 3; }
+.grid10 { grid-area: 5 / 2 / 6 / 3; }

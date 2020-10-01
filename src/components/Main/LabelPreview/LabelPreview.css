@@ -20,18 +20,6 @@
   width: 100%;
 }
 
-/*
-.label-sheet {
-  width: 50%;
-}
-*/
-.description-container {
-  border: 0.5px solid #303030;
-  width: 65%;
-  padding: 5px;
-  margin: 5px 0 5px 10px;
-}
-
 .collection-wrapper {
   width: 97%;
   height: 25%;
@@ -53,6 +41,7 @@
 .symbol-wrapper {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .symbol {
