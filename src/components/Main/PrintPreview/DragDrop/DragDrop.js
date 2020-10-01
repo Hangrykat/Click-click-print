@@ -3,8 +3,7 @@ import { useDrag, useDrop } from "react-dnd";
 import { StateContext } from "../../../../context";
 
 import "./DragDrop.css";
-import { PrintOutlined } from "@material-ui/icons";
-import CustomButton from "../../CustomUI/CustomButton";
+import "../../../../shared-styles.css"
 import CancelIcon from "@material-ui/icons/Cancel";
 import Label from "../../LabelPreview/Label/Label";
 
@@ -48,7 +47,7 @@ const DragDrop = () => {
         <div className="drag-drop-panel box-shadow">
           <div style={{ display: "block" }} className="text-center">
             <div className="title-big teal-bg">Saved Labels</div>
-            <div className="label-text">Drag the label(s) to print grid </div>
+            <div className="single-line-input text-center"><p>Drag the label(s) to print grid</p></div>
             <div className="labels-to-print">
               {/*
               {labelList.map((label) => (
@@ -76,7 +75,7 @@ const DragDrop = () => {
         <div className="drag-drop-panel box-shadow">
           <div style={{ display: "block" }} className="text-center">
             <div className="title-big teal-bg">Print Grid </div>
-            <div className="label-text">Drop the label(s) in the grid </div>
+            <div className="single-line-input text-center"><p>Drop the label(s) in the grid</p></div>
             <div className="slots">
               {Array.apply(null, { length: 8 }).map((e, i) => (
                 <div className="slot-to-print">
@@ -102,15 +101,6 @@ const DragDrop = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="print-button">
-        <CustomButton
-          name="Print"
-          endIcon={<PrintOutlined />}
-          onClick={() => {
-            window.print();
-          }}
-        />
       </div>
     </div>
   );
@@ -150,9 +140,9 @@ const Slot = ({ pos, changeTaskStatus, children, clearslot }) => {
   drop(ref);
   return (
     <div ref={ref} className="slot">
-      <div className="slot-content">{children}</div>
+      {children}
       <div className="delete-button" onClick={() => clearslot(pos)}>
-        <CancelIcon />
+        <CancelIcon style={{color: "#F8F8F8"}}/>
       </div>
     </div>
   );
