@@ -1,10 +1,10 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import CustomDateInput from "../../CustomUI/CustomDateInput";
 import CustomTextInput from "../../CustomUI/CustomTextInput";
 import { StateContext } from "../../../../context";
 
 function TextInput() {
-  const { setLabel, label, refInput } = useContext(StateContext);
+  const { setLabel, label } = useContext(StateContext);
   return (
     <div className="input-panel">
       <div className="input-field-wrapper">

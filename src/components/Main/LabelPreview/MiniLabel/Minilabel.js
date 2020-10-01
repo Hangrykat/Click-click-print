@@ -94,12 +94,14 @@ function MiniLabel({ label, styled }) {
         <div className="iconWrapper">
           <img
             className="editMe"
+            alt="editMe"
             src={require(`../../../../assets/extras/pencil.svg`)}
             onClick={() => selectLabel(label)}
           ></img>
         </div>
         <div className="iconWrapper">
           <img
+            alt="deleteMe"
             className="deleteMe"
             src={require(`../../../../assets/extras/trash.svg`)}
             onClick={() => submit(label)}

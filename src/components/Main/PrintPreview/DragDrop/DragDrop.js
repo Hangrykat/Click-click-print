@@ -3,23 +3,12 @@ import { useDrag, useDrop } from "react-dnd";
 import { StateContext } from "../../../../context";
 
 import "./DragDrop.css";
-import "../../../../shared-styles.css"
+import "../../../../shared-styles.css";
 import CancelIcon from "@material-ui/icons/Cancel";
 import Label from "../../LabelPreview/Label/Label";
 
-const labelList = [
-  { id: 1, title: "Neo", url: "burnable.jpg" },
-  { id: 2, title: "Bruno", url: "burnable.jpg" },
-  { id: 3, title: "Rania", url: "burnable.jpg" },
-  { id: 4, title: "Richard", url: "burnable.jpg" },
-  { id: 5, title: "Radhika", url: "burnable.jpg" },
-  { id: 6, title: "Erick", url: "burnable.jpg" },
-  { id: 7, title: "Justin", url: "burnable.jpg" },
-  { id: 8, title: "Jakub", url: "burnable.jpg" },
-];
-
 const DragDrop = () => {
-  const { label, labelsArray } = useContext(StateContext);
+  const { labelsArray } = useContext(StateContext);
 
   const [mySlots, setSlots] = useState([]);
 
@@ -47,7 +36,9 @@ const DragDrop = () => {
         <div className="drag-drop-panel box-shadow">
           <div style={{ display: "block" }} className="text-center">
             <div className="title-big teal-bg">Saved Labels</div>
-            <div className="single-line-input text-center"><p>Drag the label(s) to print grid</p></div>
+            <div className="single-line-input text-center">
+              <p>Drag the label(s) to print grid</p>
+            </div>
             <div className="labels-to-print">
               {/*
               {labelList.map((label) => (
@@ -75,7 +66,9 @@ const DragDrop = () => {
         <div className="drag-drop-panel box-shadow">
           <div style={{ display: "block" }} className="text-center">
             <div className="title-big teal-bg">Print Grid </div>
-            <div className="single-line-input text-center"><p>Drop the label(s) in the grid</p></div>
+            <div className="single-line-input text-center">
+              <p>Drop the label(s) in the grid</p>
+            </div>
             <div className="slots">
               {Array.apply(null, { length: 8 }).map((e, i) => (
                 <div className="slot-to-print">
@@ -142,7 +135,7 @@ const Slot = ({ pos, changeTaskStatus, children, clearslot }) => {
     <div ref={ref} className="slot">
       {children}
       <div className="delete-button" onClick={() => clearslot(pos)}>
-        <CancelIcon style={{color: "#F8F8F8"}}/>
+        <CancelIcon style={{ color: "#F8F8F8" }} />
       </div>
     </div>
   );
