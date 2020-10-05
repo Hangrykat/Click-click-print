@@ -14,7 +14,7 @@ function Input() {
       <div className="main-bg-wrapper">
         <form id="label-info" className="secondary-bg-wrapper">
           <div className="title-big">Step 1: Enter label information</div>
-          <div className="input-field">
+          <div className="">
             <TextInput />
             <div className="title-small">NFPA Index</div>
 

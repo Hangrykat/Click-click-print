@@ -63,7 +63,7 @@ function NFPAinput() {
     );
   }
   return (
-    <div className="NFPA-Diamond-input flex-wrap">
+    <div className="NFPA-Diamond-input">
       <div className="flex">
         {OneColorDiamondWrapper(
           "redDiamond",

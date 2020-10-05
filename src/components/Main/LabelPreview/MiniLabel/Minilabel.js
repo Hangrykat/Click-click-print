@@ -125,11 +125,11 @@ function MiniLabel({ label, styled }) {
         </div>
         <div className="minilabel-sheet">
           <div className="title-minilabel">Hazardous Symbols</div>
-          <div className="flex-center margin minisymbol-wrapper">
+          <div className="flex-center minisymbol-wrapper">
             {label.symbols ? label.symbols.map((elem) => showSymbol(elem)) : ""}
           </div>
           <div id="diamond" className="warning-diamond">
-            <p className="NFPAtitle">Warning Diamond</p>
+            <p className="NFPAtitle">NFPA Index</p>
             <div className="diamond-wrapper">
               <img
                 className="miniNFPA"

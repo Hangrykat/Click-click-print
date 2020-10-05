@@ -1,16 +1,42 @@
 .main-container {
-    align-items: center;
+  align-items: center;
 }
 
 .main-page-view {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 @media only screen and (max-width: 500px) {
-    .main-page-view {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
+  .main-page-view {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ///////////////    LabelPreview.js and Input.js    /////////////// */
+
+.panel-container {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  height: 85vh;
+  margin: 10px;
+}
+
+.secondary-bg-wrapper {
+  justify-content: space-between;
+  background: #fff;
+  width: 100%;
+}
+
+.main-bg-wrapper {
+  display: flex;
+  justify-content: center;
+  background: #add2c9;
+  width: 100%;
+  padding: 20px;
+  margin: 0 20px;
+  border-radius: 5px;
 }

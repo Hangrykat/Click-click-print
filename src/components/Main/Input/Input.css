@@ -1,31 +1,6 @@
-.panel-container {
-  display: flex;
-  justify-content: center;
-  width: 40%;
-  height: 85vh;
-  margin: 10px;
-}
+/* ///////////////    Input.js    /////////////// */
 
-.main-bg-wrapper {
-  display: flex;
-  justify-content: center;
-  background: #add2c9;
-  width: 100%;
-  padding: 20px;
-  margin: 0 20px;
-  border-radius: 5px;
-}
-
-.name-contact-wrapper {
-  display: flex;
-  padding: 0;
-}
-
-.secondary-bg-wrapper {
-  justify-content: space-between;
-  background: #fff;
-  width: 100%;
-}
+/* ///////////////    TextInput.js    /////////////// */
 
 .input-panel-wrapper {
   display: block;
@@ -35,6 +10,8 @@
 .input-field-wrapper {
   display: block;
 }
+
+/* ///////////////    SymbolsInput.js    /////////////// */
 
 .choose-symbols-wrapper {
   display: flex;
@@ -51,9 +28,18 @@
   min-height: 50px;
 }
 
+@media screen and (max-width: 1600px) and (max-height: 900px) {
+  .chooseSymbol img {
+    height: 8vh;
+    width: 3.5vw;
+  }
+}
+
 .previewSymbols {
   height: 100%;
 }
+
+/* ///////////////    NFPA.js    /////////////// */
 
 .color-diamond-wrapper {
   display: flex;
@@ -63,16 +49,13 @@
 }
 
 .color-diamond-wrapper img {
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
+  margin: 0px;
 }
 
 .NFPA-Diamond-input {
   margin: 0 15px;
-}
-
-.flex-start {
-  justify-content: flex-start;
 }
 
 @media screen and (max-width: 1600px) and (max-height: 900px) {
@@ -80,18 +63,7 @@
     margin: 2px;
   }
 
-  .color-diamond-wrapper img {
-    height: 35px;
-    width: 35px;
-    margin: 0px;
-  }
-
   .dropdown {
     width: 16vw;
-  }
-
-  .chooseSymbol img {
-    height: 8vh;
-    width: 3.5vw;
   }
 }
