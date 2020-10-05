@@ -23,9 +23,17 @@ function TextInput() {
           }
           value={label.chemicalFormula}
         />
-
-        <div className="name-contact-wrapper">
-          <div className="flex-grow mr-5">
+        <CustomTextInput
+          name="description"
+          label="Description"
+          line="multiline"
+          rows="2"
+          inputProps={{ maxLength : 70 }}
+          onChange={(e) => setLabel({ ...label, description: e.target.value })}
+          value={label.description}
+        />    
+        <div className="flex-wrapper">
+          <div className="flex-grow">
             <CustomTextInput
               name="owner"
               label="Name/ID"
@@ -43,16 +51,7 @@ function TextInput() {
               value={label.contactInfo}
             />
           </div>
-        </div>
-        <CustomTextInput
-          name="description"
-          label="Description"
-          line="multiline"
-          rows="2"
-          inputProps={{ maxLength: 70 }}
-          onChange={(e) => setLabel({ ...label, description: e.target.value })}
-          value={label.description}
-        />
+        </div>  
         <div className="flex-wrapper">
           <div className="flex-grow mr-5">
             <CustomDateInput
