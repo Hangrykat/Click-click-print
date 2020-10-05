@@ -16,6 +16,11 @@
   border-radius: 5px;
 }
 
+.name-contact-wrapper {
+  display: flex;
+  padding: 0;
+}
+
 .secondary-bg-wrapper {
   justify-content: space-between;
   background: #fff;
@@ -24,24 +29,21 @@
 
 .input-panel-wrapper {
   display: block;
-}
-
-.input-panel {
-  width: 97%;
-  margin: 5px 10px;
-  background: #fff;
+  margin: 0 15px;
 }
 
 .input-field-wrapper {
   display: block;
-  padding: 5px;
 }
 
 .choose-symbols-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 10px 0;
+  border: 1px solid black;
+  padding: 3%;
+  margin: 0 15px;
+  margin-top: 20px;
 }
 
 .chooseSymbol {
@@ -55,22 +57,18 @@
 
 .color-diamond-wrapper {
   display: flex;
+  width: 50%;
+  height: 9vh;
   align-items: center;
-  margin: 5px;
 }
 
 .color-diamond-wrapper img {
   height: 50px;
   width: 50px;
-  margin: 0px 5px;
 }
 
 .NFPA-Diamond-input {
-  margin-bottom: 25px;
-}
-
-.dropdown {
-  width: 14vw;
+  margin: 0 15px;
 }
 
 .flex-start {
@@ -81,7 +79,7 @@
   .color-diamond-wrapper {
     margin: 2px;
   }
-  
+
   .color-diamond-wrapper img {
     height: 35px;
     width: 35px;
@@ -91,10 +89,9 @@
   .dropdown {
     width: 16vw;
   }
-  
+
   .chooseSymbol img {
     height: 8vh;
     width: 3.5vw;
   }
-
 }

@@ -4,14 +4,15 @@ import CustomTextInput from "../../CustomUI/CustomTextInput";
 import { StateContext } from "../../../../context";
 
 function TextInput() {
-  const { setLabel, label } = useContext(StateContext);
+  const { setLabel, label, refInput } = useContext(StateContext);
   return (
-    <div className="input-panel">
+    <div className="input-panel-wrapper">
       <div className="input-field-wrapper">
         <CustomTextInput
           name="product"
           label="Product name"
           onChange={(e) => setLabel({ ...label, productName: e.target.value })}
+          inputRef={refInput}
           value={label.productName}
         />
         <CustomTextInput
@@ -23,8 +24,8 @@ function TextInput() {
           value={label.chemicalFormula}
         />
 
-        <div className="flex-wrapper">
-          <div className="flex-grow">
+        <div className="name-contact-wrapper">
+          <div className="flex-grow mr-5">
             <CustomTextInput
               name="owner"
               label="Name/ID"
@@ -53,7 +54,7 @@ function TextInput() {
           value={label.description}
         />
         <div className="flex-wrapper">
-          <div className="flex-grow">
+          <div className="flex-grow mr-5">
             <CustomDateInput
               name="date"
               label="Date"

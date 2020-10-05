@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Dropdown from "react-dropdown";
 import { StateContext } from "../../../../context";
+import "../../../../shared-styles.css";
 
 function NFPAinput() {
   const { setLabel, label } = useContext(StateContext);
@@ -43,28 +44,27 @@ function NFPAinput() {
           src={require(`../../../../assets/NFPAsymbols/${color}.svg`)}
           alt={color}
         ></img>
-        <div className="dropdown">
-          <Dropdown
-            options={index}
-            placeholder={placeholder}
-            onChange={(e) =>
-              setLabel({
-                ...label,
-                NFPA: {
-                  ...label.NFPA,
-                  [color]: e.value.slice(0, e.value.indexOf("-")),
-                },
-              })
-            }
-            value={""}
-          />
-        </div>
+        <Dropdown
+          className="small-letters size100"
+          options={index}
+          placeholder={placeholder}
+          onChange={(e) =>
+            setLabel({
+              ...label,
+              NFPA: {
+                ...label.NFPA,
+                [color]: e.value.slice(0, e.value.indexOf("-")),
+              },
+            })
+          }
+          value={""}
+        />
       </div>
     );
   }
   return (
     <div className="NFPA-Diamond-input flex-wrap">
-      <div className="flex-center flex-start">
+      <div className="flex">
         {OneColorDiamondWrapper(
           "redDiamond",
           flammabilityIndex,
@@ -76,7 +76,7 @@ function NFPAinput() {
           "Health Hazard"
         )}
       </div>
-      <div className="flex-center flex-start">
+      <div className="flex">
         {OneColorDiamondWrapper(
           "yellowDiamond",
           instabilityIndex,

@@ -40,18 +40,6 @@ const DragDrop = () => {
               <p>Drag the label(s) to print grid</p>
             </div>
             <div className="labels-to-print">
-              {/*
-              {labelList.map((label) => (
-                <Label
-                  id={label.id}
-                  key={label.id}
-                  title={label.title}
-                  url={label.url}
-                  draggable={true}
-                ></Label>
-              ))}
-               */}
-
               {labelsArray.map((label) => (
                 <PrintLabel
                   id={label.id}

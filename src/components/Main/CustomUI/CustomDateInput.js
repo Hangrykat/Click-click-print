@@ -7,7 +7,6 @@ function CustomDateInput(props) {
     borderRadius: 3,
     border: 0,
     fontSize: "0.5vw",
-    padding: 0,
     width: "100%",
     display: "flex",
     justifyContent: "center",

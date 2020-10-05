@@ -6,21 +6,15 @@ function CustomTextInput(props) {
     borderRadius: 3,
     border: 0,
     fontSize: "0.5vw",
-    margin: "10px 0",
-    padding: 0,
     width: "100%",
     display: "flex",
     justifyContent: "center",
     alignItem: "center",
+    marginBottom: "20px",
   };
 
   let button = (
-    <TextField
-      size="small"
-      variant="outlined"
-      style={styledInput}
-      {...props}
-    />
+    <TextField size="small" variant="outlined" style={styledInput} {...props} />
   );
   if (props.line)
     button = (
