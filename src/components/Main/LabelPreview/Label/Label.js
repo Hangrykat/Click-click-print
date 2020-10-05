@@ -52,7 +52,7 @@ function Label({ label }) {
           </div>
         </div>
       </div>
-      <div className="flex-center margin symbol-wrapper">
+      <div className="flex-center symbol-wrapper">
         {label.symbols ? label.symbols.map((elem) => showSymbol(elem)) : ""}
       </div>
     </div>
