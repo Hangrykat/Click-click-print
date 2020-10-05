@@ -45,6 +45,7 @@
   opacity: inherit;
   height: 32px;
 }
+
 .iconWrapper {
   display: flex;
   align-items: center;
@@ -74,6 +75,7 @@
   text-align: center;
   padding: 2px;
 }
+
 .minilabel {
   display: flex;
   height: 92%;

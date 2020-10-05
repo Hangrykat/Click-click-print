@@ -22,18 +22,21 @@
   align-self: center;
   font-size: 1vw;
 }
+
 .redIndex {
   grid-area: 1 / 2 / 3 / 4;
   justify-self: center;
   align-self: center;
   font-size: 1vw;
 }
+
 .blueIndex {
   grid-area: 2 / 1 / 4 / 3;
   justify-self: center;
   align-self: center;
   font-size: 1vw;
 }
+
 .whiteIndex {
   grid-area: 3 / 2 / 5 / 4;
   justify-self: center;

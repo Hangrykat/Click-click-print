@@ -31,10 +31,9 @@ const DragDrop = () => {
   );
 
   return (
-    <div>
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <div className="drag-drop-container">
         <div className="drag-drop-panel box-shadow">
-          <div style={{ display: "block" }} className="text-center">
+          <div className="text-center">
             <div className="title-big teal-bg">Saved Labels</div>
             <div className="single-line-input text-center">
               <p>Drag the label(s) to print grid</p>
@@ -52,7 +51,7 @@ const DragDrop = () => {
         </div>
 
         <div className="drag-drop-panel box-shadow">
-          <div style={{ display: "block" }} className="text-center">
+          <div className="text-center">
             <div className="title-big teal-bg">Print Grid </div>
             <div className="single-line-input text-center">
               <p>Drop the label(s) in the grid</p>
@@ -83,13 +82,12 @@ const DragDrop = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
 export default DragDrop;
 
-// Saved labels imported from context
+// Saved Label (Drag)
 const PrintLabel = ({ id, label, draggable }) => {
   const ref = useRef(null);
   const [{ isDragging }, drag] = useDrag({
@@ -108,9 +106,8 @@ const PrintLabel = ({ id, label, draggable }) => {
   );
 };
 
-// Create New Component Called, Grid --> Area to put the label
-
-const Slot = ({ pos, changeTaskStatus, children, clearslot }) => {
+// Print Grid (Drop)
+  const Slot = ({ pos, changeTaskStatus, children, clearslot }) => {
   const ref = useRef(null);
   const [, drop] = useDrop({
     accept: "card",

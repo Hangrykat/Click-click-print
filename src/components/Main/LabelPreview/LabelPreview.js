@@ -48,10 +48,7 @@ function LabelPreview() {
           "The program didn't detect any Label to print, please create one to process to the print",
         buttons: [
           {
-            label: "ok",
-          },
-          {
-            label: "OhMayGosh!",
+            label: "Close",
           },
         ],
       });
