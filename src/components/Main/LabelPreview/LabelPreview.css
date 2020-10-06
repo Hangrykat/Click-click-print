@@ -9,10 +9,13 @@
 }
 
 .collection-wrapper {
-  width: 97%;
-  height: 25%;
+  max-width: 97%;
+  height: 15%;
   margin: 10px;
+  padding: 10px;
   background-color: #a9a9a9;
+  flex-wrap: wrap;
+  overflow-y: scroll;
 }
 
 /* ///////////////    Label.js    /////////////// */
@@ -169,7 +172,7 @@
 /* ///////////////    MiniLabel.js    /////////////// */
 
 .minilabel-wrapper {
-  width: 8vw;
+  min-width: 8vw;
   height: 11vh;
   border-radius: 5px;
   position: relative;
@@ -178,8 +181,8 @@
   align-items: center;
 }
 .selectedminilabel-wrapper {
-  background-color: black;
-  width: 8vw;
+  background-color: rgb(255, 62, 62);
+  min-width: 8vw;
   height: 11vh;
   border-radius: 5px;
   position: relative;
@@ -233,6 +236,7 @@
 
 .minilabel {
   display: flex;
+  flex-direction: column;
   height: 92%;
   width: 92%;
   background-color: white;
@@ -253,22 +257,35 @@
 .minititle-blackBG {
   background-color: #202020;
   color: #ffffff;
-  font-size: 10%;
-  width: 2vw;
+  width: 92.5%;
   max-height: 2vh;
   text-align: center;
   padding: 2px;
+  margin: 5px;
+  -webkit-print-color-adjust: exact;
 }
 
 .minilabel-sheet {
   width: 60%;
 }
+.miniContainer {
+  display: flex;
+  width: 100%;
+  height: 50%;
+}
 
 .minidescription-container {
-  border: 1px solid black;
-  width: 90%;
-  margin: 1px;
+  display: grid;
+  grid-template-columns: 32% 68%;
+  grid-template-rows: 15% 15% 40% 15% 15%;
+  border: 0.5px solid #303030;
+  width: 65%;
+  height: 4vh;
+  margin-left: 6px;
+  font-size: 5px;
+  padding: 2px;
 }
+
 .title-minilabel {
   font-size: 0.2vw;
   font-weight: bold;
@@ -276,30 +293,36 @@
   text-align: center;
 }
 
-.minisymbol-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .minisymbol {
-  height: 12px;
-  width: 12px;
-  margin: 0px;
+  height: 100%;
+  width: 8%;
+  margin: 0.5%;
 }
 .minisymbol img {
   width: 100%;
   height: 100%;
 }
 
+.miniwarning-diamond {
+  height: 100%;
+  width: 26%;
+}
+
+.minidiamond-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
 .miniNFPA {
-  height: 15px;
+  height: 30px;
 }
 
 .NFPAtitle {
   font-size: 4px;
 }
-
-
 
 @media screen and (max-width: 1600px) and (max-height: 900px) {
   .preview-panel {
@@ -316,13 +339,13 @@
     margin: 2%;
   }
 
-  .diamond-wrapper{
+  .diamond-wrapper {
     height: 4vw;
     width: 4vw;
   }
 
   .NFPA {
-    height: 4vw
+    height: 4vw;
   }
 
   .description-container {
@@ -331,9 +354,39 @@
     margin: 0 1% 0 0;
     padding: 1%;
   }
-  
+
   .symbol {
     height: 2vw;
     width: 2vw;
   }
+}
+.minigrid1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.minigrid2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.minigrid3 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.minigrid4 {
+  grid-area: 4 / 1 / 5 / 2;
+}
+.minigrid5 {
+  grid-area: 5 / 1 / 6 / 2;
+}
+.minigrid6 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.minigrid7 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.minigrid8 {
+  grid-area: 3 / 2 / 4 / 3;
+}
+.minigrid9 {
+  grid-area: 4 / 2 / 5 / 3;
+}
+.minigrid10 {
+  grid-area: 5 / 2 / 6 / 3;
 }

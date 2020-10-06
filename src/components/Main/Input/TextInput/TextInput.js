@@ -28,12 +28,16 @@ function TextInput() {
           label="Description"
           line="multiline"
           rows="2"
+<<<<<<< HEAD
           inputProps={{ maxLength : 65 }}
+=======
+          inputProps={{ maxLength: 70 }}
+>>>>>>> brunoBranch
           onChange={(e) => setLabel({ ...label, description: e.target.value })}
           value={label.description}
-        />    
+        />
         <div className="flex-wrapper">
-          <div className="flex-grow">
+          <div className="flex-grow mr-5">
             <CustomTextInput
               name="owner"
               label="Name/ID"
@@ -51,7 +55,7 @@ function TextInput() {
               value={label.contactInfo}
             />
           </div>
-        </div>  
+        </div>
         <div className="flex-wrapper">
           <div className="flex-grow mr-5">
             <CustomDateInput

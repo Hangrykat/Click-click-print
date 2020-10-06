@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import { StateContext } from "../../../../context";
+<<<<<<< HEAD
 import "../LabelPreview.css";
+=======
+>>>>>>> brunoBranch
 import { Textfit } from "react-textfit";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
@@ -109,39 +112,36 @@ function MiniLabel({ label, styled }) {
         </div>
       </div>
       <div className="minilabel">
-        <div className="minilabel-sheet">
-          <div className="flex-center minipadding">
-            <Textfit mode="multi" className="minititle-blackBG">
-              {label.productName} ({label.chemicalFormula})
-            </Textfit>
-          </div>
-          <div className="minidescription-container">
-            <div className="minilabel-text">Date:</div>
-            <div className="minilabel-text">Expiry Date:</div>
-            <div className="minilabel-text">Description:</div>
-            <div className="minilabel-text">Name/ID No:</div>
-            <div className="minilabel-text">Contact:</div>
-          </div>
+        <div className="flex-center">
+          <Textfit mode="multi" className="minititle-blackBG">
+            {label.productName} ({label.chemicalFormula})
+          </Textfit>
         </div>
-        <div className="minilabel-sheet">
-          <div className="title-minilabel">Hazardous Symbols</div>
-          <div className="flex-center minisymbol-wrapper">
-            {label.symbols ? label.symbols.map((elem) => showSymbol(elem)) : ""}
+        <div className="miniContainer">
+          <div className="minidescription-container">
+            <div className="minigrid1">Name/ID:</div>
+            <div className="minigrid2">Contact:</div>
+            <div className="minigrid3">Description:</div>
+            <div className="minigrid4">Date:</div>
+            <div className="minigrid5">Expiry Date:</div>
+            <div className="minigrid6">{label.owner}</div>
+            <div className="minigrid7">{label.contactInfo}</div>
+            <div className="minigrid8 word-wrap"></div>
+            <div className="minigrid9">{label.date}</div>
+            <div className="minigrid10">{label.eDate}</div>
           </div>
-          <div id="diamond" className="warning-diamond">
-            <p className="NFPAtitle">NFPA Index</p>
-            <div className="diamond-wrapper">
+          <div id="diamond" className="miniwarning-diamond">
+            <div className="minidiamond-wrapper">
               <img
                 className="miniNFPA"
                 src={require("../../../../assets/NFPAsymbols/NFPA_704.svg")}
                 alt="NFPA 704 symbol"
               ></img>
-              <div className="redIndex">{label.NFPA.redIndex}</div>
-              <div className="blueIndex">{label.NFPA.blueIndex}</div>
-              <div className="yellowIndex">{label.NFPA.yellowIndex}</div>
-              <div className="whiteIndex">{label.NFPA.whiteIndex}</div>
             </div>
           </div>
+        </div>
+        <div className="flex-center minisymbol-wrapper">
+          {label.symbols ? label.symbols.map((elem) => showSymbol(elem)) : ""}
         </div>
       </div>
     </div>
