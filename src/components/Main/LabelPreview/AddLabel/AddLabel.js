@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
 import { StateContext } from "../../../../context";
-<<<<<<< HEAD
 import "../LabelPreview.css";
-=======
->>>>>>> brunoBranch
 
 function AddLabel() {
   const {

@@ -1,8 +1,5 @@
 import React from "react";
-<<<<<<< HEAD
 import "../LabelPreview.css";
-=======
->>>>>>> brunoBranch
 
 function Label({ label }) {
   function showSymbol(symbol) {

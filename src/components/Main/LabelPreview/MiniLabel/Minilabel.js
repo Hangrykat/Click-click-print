@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
 import { StateContext } from "../../../../context";
-<<<<<<< HEAD
 import "../LabelPreview.css";
-=======
->>>>>>> brunoBranch
 import { Textfit } from "react-textfit";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css

@@ -28,11 +28,7 @@ function TextInput() {
           label="Description"
           line="multiline"
           rows="2"
-<<<<<<< HEAD
-          inputProps={{ maxLength : 65 }}
-=======
-          inputProps={{ maxLength: 70 }}
->>>>>>> brunoBranch
+          inputProps={{ maxLength: 65 }}
           onChange={(e) => setLabel({ ...label, description: e.target.value })}
           value={label.description}
         />
