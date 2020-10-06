@@ -44,5 +44,8 @@
 }
   
 @media screen and (max-width: 1600px) and (max-height: 900px){
- 
+    .modal-window {
+        padding: 1%;
+        height: 93%;
+    }
 }

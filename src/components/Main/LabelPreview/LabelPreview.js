@@ -137,7 +137,7 @@ function LabelPreview() {
               onClick={() => saveHandler(label, labelsArray)}
             />
           </div>
-          <div className="title-big">Step 3: Manage label and file</div>
+          <div className="title-big">Step 3: Edit and delete labels</div>
           <div className="collection-wrapper flex-center">
             {labelsArray !== []
               ? labelsArray.map((elem) => previewSavedLabels(elem))
