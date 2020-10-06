@@ -1,5 +1,4 @@
 import React from "react";
-import "./Label.css";
 
 function Label({ label }) {
   function showSymbol(symbol) {

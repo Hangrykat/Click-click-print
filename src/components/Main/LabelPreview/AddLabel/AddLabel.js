@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { StateContext } from "../../../../context";
-import "./AddLabel.css";
 
 function AddLabel() {
   const {
