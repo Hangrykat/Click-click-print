@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 import "./PrintPreview.css";
 import { StateContext } from "../../../context";
 
-import { PrintOutlined } from "@material-ui/icons";
-import CustomButton from "../CustomUI/CustomButton";
 import CloseIcon from '@material-ui/icons/Close';
 
 import DragDrop from "./DragDrop/DragDrop"
@@ -30,17 +28,9 @@ function PrintPreview() {
         <div className="modal-content flex-center">
           <DndProvider backend={HTML5Backend}>
             <DragDrop/>
-          </DndProvider>         
-        </div>
-        <div className="print-button">
-        <CustomButton
-          name="Print"
-          endIcon={<PrintOutlined />}
-          onClick={() => {
-            window.print();
-          }}
-        />
-      </div>
+          </DndProvider>
+                   
+        </div>        
       </div>
     </div>
   );

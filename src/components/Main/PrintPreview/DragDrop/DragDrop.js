@@ -7,6 +7,9 @@ import "../../../../shared-styles.css";
 import CancelIcon from "@material-ui/icons/Cancel";
 import Label from "../../LabelPreview/Label/Label";
 
+import { PrintOutlined } from "@material-ui/icons";
+import CustomButton from "../../CustomUI/CustomButton";
+
 const DragDrop = () => {
   const { labelsArray } = useContext(StateContext);
 
@@ -78,9 +81,18 @@ const DragDrop = () => {
                   </Slot>
                 </div>
               ))}
-            </div>
-          </div>
+            </div>            
+          </div>          
         </div>
+          <div className="print-button">
+            <CustomButton
+              name="Print"
+              endIcon={<PrintOutlined />}
+              onClick={() => {
+                window.print();
+              }}
+            />
+          </div>
       </div>
   );
 };

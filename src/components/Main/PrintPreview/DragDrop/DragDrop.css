@@ -1,3 +1,10 @@
+.print-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0;
+}
+
 /*Main dragdrop layout*/
 .drag-drop-container {
   display: flex;
@@ -305,7 +312,7 @@
     padding: 0 1%;
     margin: 1%;
     height: 9.5vh;
-    width: 70%;
+    width: 67%;
     grid-template-columns: 38% 62%;
   }
 
