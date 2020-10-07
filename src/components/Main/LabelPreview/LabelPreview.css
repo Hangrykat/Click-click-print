@@ -272,6 +272,7 @@
 .minilabel-sheet {
   width: 60%;
 }
+
 .miniContainer {
   display: flex;
   width: 100%;
@@ -337,7 +338,7 @@
   }
 
   .collection-wrapper {
-    width: 96%;
+    width: 93%;
   }
 
   .NFPA {
@@ -355,7 +356,14 @@
     height: 2vw;
     width: 2vw;
   }
+
+  .minidescription-container {
+    grid-template-columns: 40% 60%;
+  }
+
 }
+
+
 .minigrid1 {
   grid-area: 1 / 1 / 2 / 2;
 }
