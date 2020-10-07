@@ -78,11 +78,11 @@ function MiniLabel({ label, styled }) {
       message: "Are you sure to delete the label?",
       buttons: [
         {
-          label: "Yes, is horrible",
+          label: "Yes",
           onClick: () => deleteLabel(label),
         },
         {
-          label: "No, but I want my money back",
+          label: "No",
         },
       ],
     });
