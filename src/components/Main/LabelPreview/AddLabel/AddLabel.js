@@ -6,7 +6,6 @@ function AddLabel() {
   const {
     setLabel,
     setLabelsArray,
-    label,
     labelsArray,
     setSelectedId,
     refInput,

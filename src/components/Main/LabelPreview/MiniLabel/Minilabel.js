@@ -60,6 +60,7 @@ function MiniLabel({ label, styled }) {
         whiteDiamond: "",
       },
     });
+    setHazardousSymbols("");
   }
   function showSymbol(symbol) {
     return (
