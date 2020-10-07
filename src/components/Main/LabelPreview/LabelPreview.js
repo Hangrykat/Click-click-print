@@ -44,8 +44,7 @@ function LabelPreview() {
     if (labelsArray.length === 0) {
       confirmAlert({
         title: "No labels detected",
-        message:
-          "The program didn't detect any Label to print, please create one to process to the print",
+        message: "Please create at least one to process to the print",
         buttons: [
           {
             label: "Close",
@@ -63,10 +62,7 @@ function LabelPreview() {
       message: "The Label is completly Empty. Please fill some inputs",
       buttons: [
         {
-          label: "okkk......",
-        },
-        {
-          label: "I am too lazy",
+          label: "ok",
         },
       ],
     });
@@ -92,7 +88,15 @@ function LabelPreview() {
     }
     if (checkNonEmptyObject === true) {
       if (labelsArray.length > 8) {
-        alert("Max saved items, Please delete some to create a new one");
+        confirmAlert({
+          title: "Max Labels reach",
+          message: "Please delete some to create a new one",
+          buttons: [
+            {
+              label: "ok",
+            },
+          ],
+        });
       } else if (label.id === "") {
         label.id = nextId();
         setLabelsArray([
