@@ -11,9 +11,26 @@ function AddLabel() {
     setSelectedId,
     refInput,
   } = useContext(StateContext);
+  const emptylabel = {
+    id: "",
+    productName: "",
+    chemicalFormula: "",
+    description: "",
+    owner: "",
+    contactInfo: "",
+    date: "",
+    eDate: "",
+    symbols: [],
+    NFPA: {
+      redDiamond: "",
+      blueDiamond: "",
+      yellowDiamond: "",
+      whiteDiamond: "",
+    },
+  };
   function addLabelhandle() {
-    const emptylabel = labelsArray.find(({ id }) => id === "");
-    if (emptylabel) {
+    const foundEmpty = labelsArray.find(({ id }) => id === "");
+    if (foundEmpty) {
       setSelectedId("");
       setLabel({
         id: "",
@@ -50,7 +67,7 @@ function AddLabel() {
           whiteDiamond: "",
         },
       });
-      setLabelsArray([...labelsArray, label]);
+      setLabelsArray([...labelsArray, emptylabel]);
       setSelectedId("");
     }
     refInput.current.focus();
