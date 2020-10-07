@@ -44,7 +44,7 @@ function LabelPreview() {
     if (labelsArray.length === 0) {
       confirmAlert({
         title: "No labels detected",
-        message: "Please create at least one to process to the print",
+        message: "Please create at least one in order to print",
         buttons: [
           {
             label: "Close",
@@ -58,11 +58,11 @@ function LabelPreview() {
 
   function emptyLabel() {
     confirmAlert({
-      title: "Empty Label",
-      message: "The Label is completly Empty. Please fill some inputs",
+      title: "Empty inputs",
+      message: "Please enter the information.",
       buttons: [
         {
-          label: "ok",
+          label: "Ok",
         },
       ],
     });
@@ -89,11 +89,11 @@ function LabelPreview() {
     if (checkNonEmptyObject === true) {
       if (labelsArray.length > 8) {
         confirmAlert({
-          title: "Max Labels reach",
-          message: "Please delete some to create a new one",
+          title: "Max labels reach",
+          message: "Please delete some to create a new one.",
           buttons: [
             {
-              label: "ok",
+              label: "Ok",
             },
           ],
         });
@@ -141,7 +141,7 @@ function LabelPreview() {
               onClick={() => saveHandler(label, labelsArray)}
             />
           </div>
-          <div className="title-big">Step 3: Edit and delete labels</div>
+          <div className="title-big">Step 3: Edit and delete labels (max. 8)</div>
           <div className="collection-wrapper flex-center">
             {labelsArray !== []
               ? labelsArray.map((elem) => previewSavedLabels(elem))
