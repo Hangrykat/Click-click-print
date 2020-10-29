@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/Click-Click-Print-Backup/static/css/main.fd381595.chunk.css",
+    "main.js": "/Click-Click-Print-Backup/static/js/main.b291371b.chunk.js",
+    "main.js.map": "/Click-Click-Print-Backup/static/js/main.b291371b.chunk.js.map",
+    "runtime-main.js": "/Click-Click-Print-Backup/static/js/runtime-main.0042f1e4.js",
+    "runtime-main.js.map": "/Click-Click-Print-Backup/static/js/runtime-main.0042f1e4.js.map",
+    "static/css/2.e5a56be0.chunk.css": "/Click-Click-Print-Backup/static/css/2.e5a56be0.chunk.css",
+    "static/js/2.f4b93c69.chunk.js": "/Click-Click-Print-Backup/static/js/2.f4b93c69.chunk.js",
+    "static/js/2.f4b93c69.chunk.js.map": "/Click-Click-Print-Backup/static/js/2.f4b93c69.chunk.js.map",
+    "index.html": "/Click-Click-Print-Backup/index.html",
+    "precache-manifest.36c74c8f93d97e246b13055fac8fc691.js": "/Click-Click-Print-Backup/precache-manifest.36c74c8f93d97e246b13055fac8fc691.js",
+    "service-worker.js": "/Click-Click-Print-Backup/service-worker.js",
+    "static/css/2.e5a56be0.chunk.css.map": "/Click-Click-Print-Backup/static/css/2.e5a56be0.chunk.css.map",
+    "static/css/main.fd381595.chunk.css.map": "/Click-Click-Print-Backup/static/css/main.fd381595.chunk.css.map",
+    "static/js/2.f4b93c69.chunk.js.LICENSE.txt": "/Click-Click-Print-Backup/static/js/2.f4b93c69.chunk.js.LICENSE.txt",
+    "static/media/NFPA_704.svg": "/Click-Click-Print-Backup/static/media/NFPA_704.73140ab5.svg",
+    "static/media/add.svg": "/Click-Click-Print-Backup/static/media/add.6a5fc102.svg",
+    "static/media/blueDiamond.svg": "/Click-Click-Print-Backup/static/media/blueDiamond.7f835f2c.svg",
+    "static/media/compressedgas.svg": "/Click-Click-Print-Backup/static/media/compressedgas.608c01d1.svg",
+    "static/media/corrosive.svg": "/Click-Click-Print-Backup/static/media/corrosive.cf4c07f1.svg",
+    "static/media/environmentdanger.svg": "/Click-Click-Print-Backup/static/media/environmentdanger.fe8074c5.svg",
+    "static/media/explosive.svg": "/Click-Click-Print-Backup/static/media/explosive.62f04a17.svg",
+    "static/media/flammable.svg": "/Click-Click-Print-Backup/static/media/flammable.6159a214.svg",
+    "static/media/healthhazard.svg": "/Click-Click-Print-Backup/static/media/healthhazard.bdd3de92.svg",
+    "static/media/oxidationdanger.svg": "/Click-Click-Print-Backup/static/media/oxidationdanger.ed9023d1.svg",
+    "static/media/pencil.svg": "/Click-Click-Print-Backup/static/media/pencil.ee66ebd1.svg",
+    "static/media/redDiamond.svg": "/Click-Click-Print-Backup/static/media/redDiamond.cbc82c3c.svg",
+    "static/media/toxic.svg": "/Click-Click-Print-Backup/static/media/toxic.d0281c25.svg",
+    "static/media/trash.svg": "/Click-Click-Print-Backup/static/media/trash.1d3e4d06.svg",
+    "static/media/warning.svg": "/Click-Click-Print-Backup/static/media/warning.4c183612.svg",
+    "static/media/whiteDiamond.svg": "/Click-Click-Print-Backup/static/media/whiteDiamond.23bb6f7f.svg",
+    "static/media/yellowDiamond.svg": "/Click-Click-Print-Backup/static/media/yellowDiamond.d1743d4a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0042f1e4.js",
+    "static/css/2.e5a56be0.chunk.css",
+    "static/js/2.f4b93c69.chunk.js",
+    "static/css/main.fd381595.chunk.css",
+    "static/js/main.b291371b.chunk.js"
+  ]
+}
